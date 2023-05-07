@@ -8,8 +8,8 @@ data:
   config.yaml: |
     peers:
       - peer-address: ${LOCAL_LAN_OPNSENSE}
-        peer-asn: 64512
-        my-asn: 64512
+        peer-asn: 65551
+        my-asn: 65552
     address-pools:
       - name: default
         protocol: bgp
