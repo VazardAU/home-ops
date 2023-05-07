@@ -1,7 +1,7 @@
 ---
 clusterName: cluster-0
 
-talosVersion: v1.4.0
+talosVersion: v1.4.1
 kubernetesVersion: v1.27.1
 endpoint: https://cluster-0.${domainName}:6443
 
@@ -16,21 +16,29 @@ additionalMachineCertSans:
   - cluster-0.${domainName}
 
 nodes:
-  - hostname: talos-node-1
-    ipAddress: 192.168.9.101
+  - hostname: k8s-cp01
+    ipAddress: 192.168.10.201
     controlPlane: true
     installDisk: /dev/sda
-  - hostname: talos-node-2
-    ipAddress: 192.168.9.102
+  - hostname: k8s-cp02
+    ipAddress: 192.168.10.202
     controlPlane: true
     installDisk: /dev/sda
-  - hostname: talos-node-3
-    ipAddress: 192.168.9.103
+  - hostname: k8s-cp03
+    ipAddress: 192.168.10.203
     controlPlane: true
     installDisk: /dev/sda
-  - hostname: talos-node-4
-    ipAddress: 192.168.9.104
-    controlPlane: true
+  - hostname: k8s-wk01
+    ipAddress: 192.168.10.204
+    controlPlane: false
+    installDisk: /dev/sda
+  - hostname: k8s-wk02
+    ipAddress: 192.168.10.205
+    controlPlane: false
+    installDisk: /dev/sda
+  - hostname: k8s-wk03
+    ipAddress: 192.168.10.206
+    controlPlane: false
     installDisk: /dev/sda
 
 controlPlane:
@@ -68,13 +76,6 @@ controlPlane:
           extraArgs:
             feature-gates: GracefulNodeShutdown=true,MixedProtocolLBService=true
             rotate-server-certificates: "true"
-        install:
-          extraKernelArgs:
-            - "talos.logging.kernel=udp://192.168.169.108:6050/"
-        logging:
-          destinations:
-            - endpoint: "udp://192.168.169.108:6051/"
-              format: json_lines
         network:
           extraHostEntries:
             - ip: ${clusterEndpointIP}
@@ -86,4 +87,4 @@ controlPlane:
         time:
           disabled: false
           servers:
-            - 192.168.8.1
+            - 192.168.10.1

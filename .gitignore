@@ -2,3 +2,11 @@
 .decrypted~*
 ### KUBECONFIG ###
 provision
+## Ansible for now
+ansible
+# Archive
+archive
+# k8s
+kubeconfig
+# Envrc
+.envrc

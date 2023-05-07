@@ -59,13 +59,13 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes:
-          - name: "talos-node-2"
+          - name: "k8s-wk01"
             devices:
               - name: "nvme0n1"
-          - name: "talos-node-3"
+          - name: "k8s-wk02"
             devices:
               - name: "nvme0n1"
-          - name: "talos-node-4"
+          - name: "k8s-wk03"
             devices:
               - name: "nvme0n1"
       resources:
@@ -149,8 +149,9 @@ spec:
               size: 3
           dataPools:
             - failureDomain: host
-              replicated:
-                size: 3
+              erasureCoded:
+                dataChunks: 2
+                codingChunks: 1
           metadataServer:
             activeCount: 1
             activeStandby: true
@@ -205,4 +206,4 @@ spec:
           name: rook-ceph-bucket
           reclaimPolicy: Delete
           parameters:
-            region: us-east-1
+            region: home

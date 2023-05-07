@@ -28,25 +28,21 @@ spec:
     keepHistory: false
   values:
     interval: 2m
-    logLevel: debug
-    provider: ovh
+    # logLevel: debug
+    provider: cloudflare
     env:
-      - name: OVH_APPLICATION_KEY
+      - name: CF_API_EMAIL
         valueFrom:
           secretKeyRef:
-            name: ovh-external-dns-creds
-            key: application-key
-      - name: OVH_APPLICATION_SECRET
+            name: cf-external-dns-creds
+            key: email
+      - name: CF_API_KEY
         valueFrom:
           secretKeyRef:
-            name: ovh-external-dns-creds
-            key: application-secret
-      - name: OVH_CONSUMER_KEY
-        valueFrom:
-          secretKeyRef:
-            name: ovh-external-dns-creds
-            key: consummer-key
+            name: cf-external-dns-creds
+            key: api-key
     extraArgs:
+      - --cloudflare-proxied
       - --annotation-filter=external-dns.home.arpa/enabled in (true)
     policy: sync
     sources:

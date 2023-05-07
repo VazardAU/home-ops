@@ -9,7 +9,7 @@ metadata:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-cert-manager-webhook-ovh
+    - name: cluster-apps-cert-manager
   path: ./kubernetes/apps/networking/ingress-nginx/certificates
   prune: true
   sourceRef:

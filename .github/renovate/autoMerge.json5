@@ -1,23 +1,44 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "description": "Auto merge container digests",
+      "description": "Auto Merge GitHub Actions",
+      "matchManagers": ["github-actions"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch"],
+    },
+    {
+      "description": "Auto Merge Pre-Commit",
+      "matchManagers": ["pre-commit"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch"],
+    },
+    {
+      "description": "Auto Merge Docker Image",
       "matchDatasources": ["docker"],
       "automerge": true,
       "automergeType": "branch",
-      "ignoreTests": true,
-      "matchUpdateTypes": ["digest"],
-      "matchPackagePattern": ["ghcr.io/onedr0p", "ghcr.io/auricom"]
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch"],
     },
     {
-      "description": "Auto merge GitHub Actions",
-      "matchManagers": ["github-actions"],
-      "matchDatasources": ["github-tags"],
+      "description": "Auto Merge Helm",
+      "matchDatasources": ["helm"],
       "automerge": true,
-      "ignoreTests": true,
       "automergeType": "branch",
-      "matchUpdateTypes": ["minor", "patch"]
-    }
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["minor", "patch"],
+    },
+    {
+      "description": "Auto Merge Flux",
+      "matchManagers": ["flux"],
+      "automerge": true,
+      "automergeType": "branch",
+      "requiredStatusChecks": null,
+      "matchUpdateTypes": ["patch"],
+    },
   ]
 }
