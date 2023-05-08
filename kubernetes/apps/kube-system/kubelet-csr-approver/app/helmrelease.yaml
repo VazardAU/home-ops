@@ -27,6 +27,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    providerRegex: "^k8s-(cp|wk)\d\d?$"
+    providerRegex: ^k8s-(cp|wk)\d\d?$
     namespace: "kube-system"
     bypassDnsResolution: true
