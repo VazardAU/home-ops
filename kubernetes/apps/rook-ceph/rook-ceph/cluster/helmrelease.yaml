@@ -145,17 +145,19 @@ spec:
       - name: rook-ceph-filesystem
         spec:
           metadataPool:
+            failureDomain: host
             replicated:
               size: 3
           dataPools:
-            - replicated:
-                size: 3
+            - name: default
               failureDomain: host
+              replicated:
+                size: 3
             - name: erasurecoded
+              failureDomain: host
               erasureCoded:
                 dataChunks: 2
                 codingChunks: 1
-              failureDomain: host
           metadataServer:
             activeCount: 1
             activeStandby: true
