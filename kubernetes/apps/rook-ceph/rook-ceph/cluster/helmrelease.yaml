@@ -148,10 +148,14 @@ spec:
             replicated:
               size: 3
           dataPools:
-            - failureDomain: host
+            - replicated:
+                size: 3
+              failureDomain: host
+            - name: erasurecoded
               erasureCoded:
                 dataChunks: 2
                 codingChunks: 1
+              failureDomain: host
           metadataServer:
             activeCount: 1
             activeStandby: true
@@ -161,6 +165,7 @@ spec:
                 memory: "64M"
               limits:
                 memory: "600M"
+          preserveFilesystemOnDelete: true
         storageClass:
           enabled: true
           isDefault: false
