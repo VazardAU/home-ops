@@ -50,9 +50,9 @@ spec:
       dataDirHostPath: /var/lib/rook
       mgr:
         count: 1
-      modules:
-        - name: rook
-          enabled: true
+        modules:
+          - name: rook
+            enabled: true
       dashboard:
         enabled: true
         urlPrefix: /
