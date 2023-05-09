@@ -47,8 +47,12 @@ spec:
       bdev_enable_discard = true
       bdev_async_discard = true
     cephClusterSpec:
+      dataDirHostPath: /var/lib/rook
       mgr:
         count: 1
+      modules:
+        - name: rook
+          enabled: true
       dashboard:
         enabled: true
         urlPrefix: /
