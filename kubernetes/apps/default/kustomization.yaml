@@ -8,3 +8,5 @@ resources:
   # Flux-Kustomizations
   # Default resources
   - jobs-rbac.yaml
+  - ./hajimari/ks.yaml
+  - ./cloudnative-pg/ks.yaml
