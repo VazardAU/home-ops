@@ -12,3 +12,8 @@
         "PKief.material-icon-theme",
     ]
 }
+{
+  "files.associations": {
+      "**/cluster/**/*.sops.toml": "plaintext"
+  }
+}
