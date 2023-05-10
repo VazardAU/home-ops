@@ -12,3 +12,4 @@ resources:
   - ./cloudnative-pg/ks.yaml
   - ./redis/ks.yaml
   - ./glauth/ks.yaml
+  - ./smtp-relay/ks.yaml
