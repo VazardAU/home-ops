@@ -32,11 +32,12 @@ spec:
       tag: latest
     env:
       TZ: "${TIMEZONE}"
+      TINFOIL_HAT_PORT: &port 8744
     service:
       main:
         ports:
           http:
-            port: 80
+            port: *port
     ingress:
       main:
         enabled: true
@@ -52,6 +53,9 @@ spec:
         tls:
           - hosts:
               - *host
+    podSecurityContext:
+      fsGroup: 568
+      fsGroupChangePolicy: "OnRootMismatch"
     persistence:
       games:
         enabled: true
