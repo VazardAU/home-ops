@@ -17,3 +17,6 @@ resources:
   - ./authelia/ks.yaml
   - ./sabnzbd/ks.yaml
   - ./tinfoil-hat/ks.yaml
+  - ./radarr/ks.yaml
+  - ./sonarr/ks.yaml
+  - ./theme-park/ks.yaml
