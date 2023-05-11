@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: ghcr.io/a1ex4/ownfoil
+      repository: a1ex4/ownfoil
       tag: 1.2.2
     env:
       TZ: "${TIMEZONE}"
