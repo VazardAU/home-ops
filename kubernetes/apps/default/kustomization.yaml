@@ -20,3 +20,4 @@ resources:
   - ./radarr/ks.yaml
   - ./sonarr/ks.yaml
   - ./theme-park/ks.yaml
+  - ./prowlarr/ks.yaml
