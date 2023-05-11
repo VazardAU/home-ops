@@ -33,6 +33,9 @@ spec:
     env:
       TZ: "${TIMEZONE}"
       TINFOIL_HAT_PORT: &port 8744
+    envFrom:
+      - secretRef:
+          name: *app
     service:
       main:
         ports:
@@ -43,7 +46,6 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          auth.home.arpa/enabled: "true"
           hajimari.io/icon: mdi:nintendo-switch
         hosts:
           - host: &host switch.${SECRET_CLUSTER_DOMAIN}
