@@ -52,9 +52,6 @@ spec:
         tls:
           - hosts:
               - *host
-    podSecurityContext:
-      fsGroup: 568
-      fsGroupChangePolicy: "OnRootMismatch"
     persistence:
       games:
         enabled: true
