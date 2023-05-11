@@ -38,9 +38,9 @@ spec:
     env:
       DEBUG: "true"
       SMTP_DOMAIN: "${SECRET_DOMAIN}"
-      SMTP_SERVER: "smtp.gmail.com"
+      SMTP_SERVER: "smtp.sendgrid.net"
       SMTP_USERNAME: "${SECRET_EMAIL_SMTP_USERNAME}"
-      SMTP_PORT: "465"
+      SMTP_PORT: "587"
     envFrom:
       - secretRef:
           name: smtp-relay-secret
