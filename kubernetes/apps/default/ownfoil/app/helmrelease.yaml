@@ -32,9 +32,6 @@ spec:
       tag: 1.2.2
     env:
       TZ: "${TIMEZONE}"
-    envFrom:
-      - secretRef:
-          name: *app
     service:
       main:
         ports:
