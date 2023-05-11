@@ -16,3 +16,4 @@ resources:
   - ./pgadmin/ks.yaml
   - ./authelia/ks.yaml
   - ./sabnzbd/ks.yaml
+  - ./ownfoil/ks.yaml
