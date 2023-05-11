@@ -33,9 +33,6 @@ spec:
     env:
       TZ: "${TIMEZONE}"
       TINFOIL_HAT_PORT: &port 8744
-    envFrom:
-      - secretRef:
-          name: *app
     service:
       main:
         ports:
