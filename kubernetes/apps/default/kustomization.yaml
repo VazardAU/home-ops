@@ -24,3 +24,4 @@ resources:
   - ./recyclarr/ks.yaml
   - ./jellyfin/ks.yaml
   - ./jellyseer/ks.yaml
+  - ./bazarr/ks.yaml
