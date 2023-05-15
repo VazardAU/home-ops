@@ -10,3 +10,5 @@ archive
 kubeconfig
 # Envrc
 .envrc
+# Monokle
+.monokle
