@@ -1,0 +1,11 @@
+---
+apiVersion: objectbucket.io/v1alpha1
+kind: ObjectBucketClaim
+metadata:
+  name: excalidraw-bucket
+  namespace: default
+spec:
+  bucketName: excalidraw
+  storageClassName: rook-ceph-bucket
+  additionalConfig:
+    maxSize: "20G"
