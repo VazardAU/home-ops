@@ -178,18 +178,18 @@ spec:
       enabled: false
   valuesFrom:
     - kind: ConfigMap
-      name: loki-chunks-bucket
-      valuesKey: BUCKET_NAME
+      name: loki
+      valuesKey: S3_BUCKET_NAME
       targetPath: loki.structuredConfig.common.storage.s3.bucketnames
     - kind: ConfigMap
-      name: loki-chunks-bucket
-      valuesKey: BUCKET_HOST
+      name: loki
+      valuesKey: S3_BUCKET_HOST
       targetPath: loki.structuredConfig.common.storage.s3.endpoint
     - kind: Secret
-      name: loki-chunks-bucket
-      valuesKey: AWS_ACCESS_KEY_ID
+      name: loki
+      valuesKey: S3_ACCESS_KEY
       targetPath: loki.structuredConfig.common.storage.s3.access_key_id
     - kind: Secret
-      name: loki-chunks-bucket
-      valuesKey: AWS_SECRET_ACCESS_KEY
+      name: loki
+      valuesKey: S3_SECRET_KEY
       targetPath: loki.structuredConfig.common.storage.s3.secret_access_key

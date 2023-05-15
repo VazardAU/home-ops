@@ -112,14 +112,8 @@ spec:
           #   url: http://loki-gateway.monitoring.svc.cluster.local.:80
     dashboards:
       default:
-        home-assistant:
-          url: https://raw.githubusercontent.com/auricom/home-ops/main/kubernetes/apps/monitoring/grafana/dashboards/home-assistant.json
-          datasource: Prometheus
-        homelab-temperatures:
-          url: https://raw.githubusercontent.com/auricom/home-ops/main/kubernetes/apps/monitoring/grafana/dashboards/homelab-temperatures.json
-          datasource: Prometheus
         truenas:
-          url: https://raw.githubusercontent.com/auricom/home-ops/main/kubernetes/apps/monitoring/grafana/dashboards/truenas.json
+          url: https://raw.githubusercontent.com/VazardAU/home-ops/main/kubernetes/apps/monitoring/grafana/dashboards/truenas.json
           datasource: Prometheus
     sidecar:
       dashboards:

@@ -117,7 +117,7 @@ spec:
         pathType: Prefix
         ingressClassName: "nginx"
         annotations:
-          # auth.home.arpa/enabled: "true"
+          auth.home.arpa/enabled: "true"
           hajimari.io/appName: "Prometheus"
           hajimari.io/icon: simple-icons:prometheus
         hosts: ["prometheus.${SECRET_CLUSTER_DOMAIN}"]
