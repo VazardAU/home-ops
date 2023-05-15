@@ -149,22 +149,33 @@ spec:
                     {{- include "loki.readSelectorLabels" . | nindent 12 }}
                 topologyKey: kubernetes.io/hostname
       extraVolumeMounts:
-        - name: loki-rules
-          mountPath: /rules/fake
-        - name: loki-rules-tmp
+        - name: rules
+          mountPath: /rules
+        - name: scratch
           mountPath: /tmp/scratch
-        - name: loki-tmp
-          mountPath: /tmp/loki-tmp
       extraVolumes:
-        - name: loki-rules
+        - name: rules
           emptyDir: {}
-        - name: loki-rules-tmp
-          emptyDir: {}
-        - name: loki-tmp
+        - name: scratch
           emptyDir: {}
       persistence:
         size: 10Gi
         storageClass: rook-ceph-block
+    backend:
+      replicas: 3
+      persistence:
+        size: 10Gi
+        storageClass: ceph-block
+      extraVolumeMounts:
+        - name: rules
+          mountPath: /rules
+        - name: scratch
+          mountPath: /tmp/scratch
+      extraVolumes:
+        - name: rules
+          emptyDir: {}
+        - name: scratch
+          emptyDir: {}
     monitoring:
       serviceMonitor:
         enabled: false
