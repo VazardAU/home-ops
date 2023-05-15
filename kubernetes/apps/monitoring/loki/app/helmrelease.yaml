@@ -61,7 +61,7 @@ spec:
           replication_factor: 3
           storage:
             s3:
-              s3: null
+              bucketnames: loki
               insecure: true
               s3forcepathstyle: true
           ring:
