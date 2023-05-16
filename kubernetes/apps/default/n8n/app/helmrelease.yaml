@@ -27,11 +27,21 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    initContainers:
+      01-init-db:
+        image: ghcr.io/onedr0p/postgres-init:14.8
+        imagePullPolicy: IfNotPresent
+        envFrom:
+          - secretRef:
+              name: *app
+    controller:
+      type: statefulset
+      annotations:
+        reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/n8n-io/n8n
       tag: 0.228.2
-    command:
-      - n8n
+    command: ["n8n"]
     env:
       GENERIC_TIMEZONE: "${TIMEZONE}"
       TZ: "${TIMEZONE}"
