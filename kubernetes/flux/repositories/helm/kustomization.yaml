@@ -31,3 +31,4 @@ resources:
   - ./stakater.yaml
   - ./vector.yaml
   - ./weave-gitops.yaml
+  - ./external-secrets.yaml
