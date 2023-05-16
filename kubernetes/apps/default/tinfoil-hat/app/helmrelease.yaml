@@ -47,6 +47,7 @@ spec:
         ingressClassName: "nginx"
         annotations:
           hajimari.io/icon: mdi:nintendo-switch
+          external-dns.home.arpa/enabled: "true"
         hosts:
           - host: &host switch.${SECRET_CLUSTER_DOMAIN}
             paths:
