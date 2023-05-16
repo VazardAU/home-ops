@@ -52,10 +52,6 @@ spec:
       N8N_SMTP_HOST: smtp-relay.default.svc.cluster.local.
       N8N_SMTP_PORT: 2525
       N8N_METRICS: "true"
-      DB_TYPE: postgresdb
-      DB_POSTGRESDB_DATABASE: n8n
-      DB_POSTGRESDB_HOST: ${POSTGRES_HOST}
-      DB_POSTGRESDB_PORT: "5432"
     envFrom:
       - secretRef:
           name: *app
