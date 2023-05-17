@@ -27,4 +27,4 @@ resources:
   - ./bazarr/ks.yaml
   - ./excalidraw/ks.yaml
   - ./n8n/ks.yaml
-  - ./obsidian-couchdb/ks.yaml
+  # - ./obsidian-couchdb/ks.yaml
