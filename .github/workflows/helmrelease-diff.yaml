@@ -7,7 +7,7 @@ on:
     paths: ["kubernetes/**/helmrelease.yaml"]
 
 env:
-  BOT_USERNAME: feisar-bot[bot]
+  BOT_USERNAME: bunnings-bot[bot]
   KUBERNETES_DIR: kubernetes/
 
 jobs:

@@ -4,6 +4,8 @@ area/ansible:
 area/ci:
   - ".github/**/*"
 area/cluster:
-  - "cluster/**/*"
+  - "kubernetes/**/*"
 area/terraform:
   - "terraform/**/*"
+area/talos:
+  - "talos/**/*"
