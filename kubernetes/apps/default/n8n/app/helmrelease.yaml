@@ -33,7 +33,7 @@ spec:
         imagePullPolicy: IfNotPresent
         envFrom:
           - secretRef:
-              name: *app
+              name: n8n-secret
     controller:
       type: statefulset
       annotations:
@@ -54,7 +54,7 @@ spec:
       N8N_METRICS: "true"
     envFrom:
       - secretRef:
-          name: *app
+          name: n8n-secret
     service:
       main:
         ports:
