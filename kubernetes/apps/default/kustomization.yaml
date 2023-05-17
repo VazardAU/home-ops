@@ -26,5 +26,5 @@ resources:
   - ./jellyseer/ks.yaml
   - ./bazarr/ks.yaml
   - ./excalidraw/ks.yaml
-  - ./n8n/ks.yaml
+  # - ./n8n/ks.yaml
   - ./obsidian-couchdb/ks.yaml
