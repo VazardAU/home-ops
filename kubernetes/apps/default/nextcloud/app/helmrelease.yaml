@@ -28,8 +28,7 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: docker.io/library/nextcloud
-      tag: 26.0.1@sha256:1858db598928e249c3cb305ba256417ee03905a004207fb6eef194a97fba0d93
+      flavor: fpm-alpine
     nginx:
       enabled: true
     nextcloud:
@@ -65,7 +64,8 @@ spec:
     externalDatabase:
       enabled: true
       type: postgresql
-      host: postgres-rw.default.svc.cluster.local
+      host: postgres-rw.default.svc.cluster.local:5432
+      database: nextcloud
     ingress:
       enabled: true
       className: nginx
@@ -113,14 +113,6 @@ spec:
         server: "${LOCAL_LAN_TRUENAS}"
         path: /mnt/data/media-data/nextcloud
         mountPath: /nextcloud-data
-    # this seems to be required for nextcloud initialization which takes a long time
-    startupProbe:
-      enabled: true
-      initialDelaySeconds: 30
-      periodSeconds: 10
-      timeoutSeconds: 5
-      failureThreshold: 30
-      successThreshold: 1
   valuesFrom:
     - targetPath: externalDatabase.user
       kind: Secret
@@ -130,7 +122,3 @@ spec:
       kind: Secret
       name: nextcloud
       valuesKey: INIT_POSTGRES_PASS
-    - targetPath: externalDatabase.database
-      kind: Secret
-      name: nextcloud
-      valuesKey: INIT_POSTGRES_DBNAME
