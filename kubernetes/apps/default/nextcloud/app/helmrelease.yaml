@@ -28,9 +28,14 @@ spec:
     keepHistory: false
   values:
     image:
+      repository: nextcloud
+      tag: 26.0.1-fpm-alpine
       flavor: fpm-alpine
     nginx:
       enabled: true
+      image:
+        repository: nginx
+        tag: 1.24-alpine
     nextcloud:
       extraInitContainers:
         - name: init-db
