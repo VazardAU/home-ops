@@ -32,3 +32,4 @@ resources:
   - ./vector.yaml
   - ./weave-gitops.yaml
   - ./external-secrets.yaml
+  - ./nextcloud.yaml

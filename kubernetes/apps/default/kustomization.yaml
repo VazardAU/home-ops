@@ -28,3 +28,4 @@ resources:
   - ./excalidraw/ks.yaml
   - ./n8n/ks.yaml
   # - ./obsidian-couchdb/ks.yaml
+  - ./nextcloud/ks.yaml
