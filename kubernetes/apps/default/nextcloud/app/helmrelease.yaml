@@ -47,7 +47,7 @@ spec:
       datadir: /var/www/data
       extraEnv:
         - name: REDIS_HOST
-          value: redis-lb.default.svc.cluster.local.
+          value: redis-lb.default.svc.cluster.local
         - name: REDIS_HOST_PORT
           value: "6379"
       existingSecret:
@@ -59,7 +59,7 @@ spec:
         fromAddress: admin
         domain: ${SECRET_CLUSTER_DOMAIN}
         smtp:
-          host: smtp-relay.default.svc.cluster.local.
+          host: smtp-relay.default.svc.cluster.local
           port: 2525
           authtype: NONE
           name: ""
@@ -101,8 +101,8 @@ spec:
     - targetPath: externalDatabase.user
       kind: Secret
       name: nextcloud
-      valuesKey: INIT_POSTGRES_USER
+      valuesKey: POSTGRES_USER
     - targetPath: externalDatabase.password
       kind: Secret
       name: nextcloud
-      valuesKey: INIT_POSTGRES_PASS
+      valuesKey: POSTGRES_PASS
