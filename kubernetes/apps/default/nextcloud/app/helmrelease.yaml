@@ -132,4 +132,4 @@ spec:
     - targetPath: externalDatabase.database
       kind: Secret
       name: nextcloud
-      valuesKey: INIT_POSTGRES_DB
+      valuesKey: INIT_POSTGRES_DBNAME
