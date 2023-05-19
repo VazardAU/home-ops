@@ -36,11 +36,11 @@ access_control:
     - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
       resources: ["^/metrics.*$"]
       policy: deny
-    # Bypass API
+    # Navi bypass on LAN
     - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
-      resources:
-        - '/rest/*'
       policy: bypass
+      networks:
+        - private
     # Two factors auth for WAN
     - domain:
         - "*.${SECRET_CLUSTER_DOMAIN}"
