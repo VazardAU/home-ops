@@ -35,8 +35,7 @@ access_control:
     # Navi bypass on LAN
     - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
       policy: bypass
-      resources:
-        - '/rest/*'
+      resources: ["^/rest([/?].*)?$"]
     # Deny public resources
     - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
       resources: ["^/metrics.*$"]
