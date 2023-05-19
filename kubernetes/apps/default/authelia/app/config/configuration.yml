@@ -32,15 +32,15 @@ access_control:
       subject: ["group:admins", "group:users"]
       networks:
         - private
+    # Navi bypass on LAN
+    - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
+      policy: bypass
+      resources:
+        - '/rest/*'
     # Deny public resources
     - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
       resources: ["^/metrics.*$"]
       policy: deny
-    # Navi bypass on LAN
-    - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
-      policy: bypass
-      networks:
-        - private
     # Two factors auth for WAN
     - domain:
         - "*.${SECRET_CLUSTER_DOMAIN}"
