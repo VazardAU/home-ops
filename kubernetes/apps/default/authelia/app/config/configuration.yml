@@ -33,7 +33,7 @@ access_control:
       networks:
         - private
     # Deny public resources
-    - domain: ["navidrome.${SECRET_CLUSTER_DOMAIN}"]
+    - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
       resources: ["^/metrics.*$"]
       policy: deny
     # Two factors auth for WAN
