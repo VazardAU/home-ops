@@ -58,10 +58,6 @@ spec:
           auth.home.arpa/enabled: "true"
           external-dns.home.arpa/enabled: "true"
           hajimari.io/icon: mdi:music
-          nginx.ingress.kubernetes.io/auth-snippet: |
-            if ( $request_uri = "/rest/*" ) {
-                return 200;
-            }
         hosts:
           - host: &host "music.${SECRET_CLUSTER_DOMAIN}"
             paths:
