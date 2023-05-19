@@ -5,6 +5,6 @@ kind: Kustomization
 namespace: default
 resources:
   - ./backups
-  - ./helmrelease.yaml
+  # - ./helmrelease.yaml
   - ./volume.yaml
   - ./externalsecret.yaml
