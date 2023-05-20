@@ -33,3 +33,4 @@ resources:
   - ./weave-gitops.yaml
   - ./external-secrets.yaml
   - ./nextcloud.yaml
+  - ./mvisonneau.yaml
