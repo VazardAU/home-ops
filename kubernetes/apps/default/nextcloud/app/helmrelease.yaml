@@ -48,6 +48,8 @@ spec:
       existingSecret:
         enabled: true
         secretName: *app
+        usernameKey: nextcloud-username
+        passwordKey: nextcloud-password
       host: &host hub.${SECRET_CLUSTER_DOMAIN}
       mail:
         enabled: true
