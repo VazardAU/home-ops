@@ -30,13 +30,6 @@ spec:
   nfs:
     server: ${LOCAL_LAN_TRUENAS}
     path: /mnt/data/media-data/nextcloud
-  mountOptions:
-    - nfsvers=3
-    - tcp
-    - intr
-    - hard
-    - noatime
-    - nodiratime
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
