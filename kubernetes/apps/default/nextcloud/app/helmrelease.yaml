@@ -116,7 +116,6 @@ spec:
         server: "${LOCAL_LAN_TRUENAS}"
         path: /mnt/data/media-data/nextcloud
         mountPath: /nextcloud-data
-        accessMode: ReadWriteMany
     # this seems to be required for nextcloud initialization which takes a long time
     startupProbe:
       enabled: true
