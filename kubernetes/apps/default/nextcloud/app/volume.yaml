@@ -19,13 +19,13 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: &name nextcloud-data
+  name: nextcloud-data
 spec:
   capacity:
     storage: 1Mi
   accessModes:
     - ReadWriteMany
-  storageClassName: *mame
+  storageClassName: nextcloud-data
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: ${LOCAL_LAN_TRUENAS}
@@ -46,7 +46,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: *name
+  storageClassName: nextcloud-data
   resources:
     requests:
       storage: 1Mi
