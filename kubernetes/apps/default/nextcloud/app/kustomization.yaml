@@ -8,3 +8,7 @@ resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
   - ./backups
+configMapGenerator:
+  - name: nextcloud-nginxconfig
+    files:
+      - ./config/nginxconfig.yaml
