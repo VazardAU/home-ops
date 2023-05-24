@@ -113,6 +113,7 @@ spec:
           rewrite ^/.well-known/webfinger /public.php?service=webfinger last;
           rewrite ^/.well-known/host-meta /public.php?service=host-meta last;
           rewrite ^/.well-known/host-meta.json /public.php?service=host-meta-json;
+          rewrite ^/login /apps/user_oidc/login/2;
           location = /.well-known/carddav {
             return 301 $scheme://$host/remote.php/dav;
           }
