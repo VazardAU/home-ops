@@ -6,5 +6,5 @@ namespace: default
 resources:
   - ./volume.yaml
   - ./externalsecret.yaml
-  # - ./helmrelease.yaml
+  - ./helmrelease.yaml
   - ./backups
