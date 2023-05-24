@@ -45,10 +45,12 @@ spec:
           value: redis-lb.default.svc.cluster.local.
         - name: REDIS_HOST_PORT
           value: "6379"
-        - name: OVERWRITEPROTOCOL
-          value: "https"
-        - name: overwrite.cli.url
-          value: https://hub.${SECRET_CLUSTER_DOMAIN}
+        # - name: OVERWRITEPROTOCOL
+        #   value: "https"
+        # - name: overwrite.cli.url
+        #   value: https://hub.${SECRET_CLUSTER_DOMAIN}
+      phpClientHttpsFix:
+        enabled: true
       existingSecret:
         enabled: true
         secretName: *app
