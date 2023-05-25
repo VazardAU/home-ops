@@ -51,9 +51,7 @@ spec:
         custom.config.php: |-
           <?php
           $CONFIG = array (
-            'overwriteprotocol' => 'https',
             'overwrite.cli.url' => 'https://hub.${SECRET_DOMAIN}',
-            'allow_local_remote_servers' => 'true',
           );
       existingSecret:
         enabled: true
