@@ -55,15 +55,6 @@ spec:
             'allow_local_remote_servers' => 'true',
             'loglevel' => '2',
             'enable_previews' => true,
-            'trusted_domains' =>
-              [
-                'nextcloud',
-                'hub.${SECRET_DOMAIN}'
-              ],
-            'trusted_proxies' =>
-              [
-                'nginx'
-              ],
             'forwarded_for_headers' =>
               [
                 0 => 'X-Forwarded-For',
