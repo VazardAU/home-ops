@@ -45,20 +45,8 @@ spec:
           value: redis-lb.default.svc.cluster.local.
         - name: REDIS_HOST_PORT
           value: "6379"
-      # phpClientHttpsFix:
-      #   enabled: true
-      defaultConfigs:
-          autoconfig.php: false
-      configs:
-        custom.config.php: |-
-          <?php
-          $CONFIG = array (
-            'overwriteprotocol' => 'https',
-            'overwrite.cli.url' => 'https://hub.${SECRET_DOMAIN}',
-            'filelocking.enabled' => 'true',
-            'loglevel' => '2',
-            'enable_previews' => false
-          );
+      phpClientHttpsFix:
+        enabled: true
       existingSecret:
         enabled: true
         secretName: *app
