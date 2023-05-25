@@ -67,6 +67,14 @@ spec:
         runAsUser: 568
         runAsGroup: 568
         fsGroupChangePolicy: "OnRootMismatch"
+    cronjob:
+      annotations: {}
+      curlInsecure: false
+      enabled: true
+      failedJobsHistoryLimit: 5
+      image: {}
+      schedule: '*/5 * * * *'
+      successfulJobsHistoryLimit: 2
     internalDatabase:
       enabled: false
     externalDatabase:
