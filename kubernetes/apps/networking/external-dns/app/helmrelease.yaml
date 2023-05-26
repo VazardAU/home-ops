@@ -44,9 +44,10 @@ spec:
     extraArgs:
       - --cloudflare-proxied
       - --annotation-filter=external-dns.home.arpa/enabled in (true)
+      - --crd-source-apiversion=externaldns.k8s.io/v1alpha1
+      - --crd-source-kind=DNSEndpoint
     policy: sync
-    sources:
-      - ingress
+    sources: ["crd", "ingress"]
     txtOwnerId: "default"
     domainFilters:
       - "${SECRET_DOMAIN}"
@@ -58,3 +59,8 @@ spec:
         cpu: 25m
       limits:
         memory: 250Mi
+    podAnnotations:
+      secret.reloader.stakater.com/reload: cf-external-dns-creds
+    tolerations:
+      - key: "node-role.kubernetes.io/control-plane"
+        operator: "Exists"
