@@ -7,4 +7,5 @@ resources:
   - ./volume.yaml
   - ./externalsecret.yaml
   - ./helmrelease.yaml
+  - ./cronjob.yaml
   - ./backups

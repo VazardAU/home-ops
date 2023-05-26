@@ -29,6 +29,7 @@ spec:
   values:
     image:
       flavor: fpm-alpine
+      tag: 26.0.1-fpm-alpine
     nginx:
       enabled: true
     nextcloud:
@@ -63,14 +64,10 @@ spec:
           authtype: NONE
           name: ""
           password: ""
-    cronjob:
-      annotations: {}
-      curlInsecure: false
-      enabled: true
-      failedJobsHistoryLimit: 5
-      image: {}
-      schedule: '*/5 * * * *'
-      successfulJobsHistoryLimit: 2
+      securityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
     internalDatabase:
       enabled: false
     externalDatabase:
@@ -81,7 +78,7 @@ spec:
       enabled: true
       className: nginx
       annotations:
-        # external-dns.home.arpa/enabled: "true"
+        external-dns.home.arpa/enabled: "true"
         hajimari.io/icon: mdi:dropbox
         nginx.ingress.kubernetes.io/proxy-body-size: "10G"
         nginx.ingress.kubernetes.io/proxy-buffering: "off"
@@ -129,11 +126,6 @@ spec:
       timeoutSeconds: 5
       failureThreshold: 30
       successThreshold: 1
-    podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
-      fsGroupChangePolicy: "OnRootMismatch"
   valuesFrom:
     - targetPath: externalDatabase.user
       kind: Secret
