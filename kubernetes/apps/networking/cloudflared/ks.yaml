@@ -11,7 +11,7 @@ spec:
   path: ./kubernetes/apps/networking/cloudflared/app
   prune: true
   dependsOn:
-    - name: networking-external-dns
+    - name: cluster-apps-external-dns
   sourceRef:
     kind: GitRepository
     name: home-ops-kubernetes
