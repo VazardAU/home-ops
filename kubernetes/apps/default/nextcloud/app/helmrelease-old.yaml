@@ -35,7 +35,7 @@ spec:
       enabled: true
       image:
         repository: nginx
-        tag: 1.24-alpine
+        tag: 1.25-alpine
     nextcloud:
       extraInitContainers:
         - name: init-db
