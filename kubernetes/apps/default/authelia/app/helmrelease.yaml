@@ -73,7 +73,7 @@ spec:
             scrapeTimeout: 10s
     ingress:
       main:
-        enabled: true
+        enabled: false
         ingressClassName: "nginx"
         annotations:
           external-dns.home.arpa/enabled: "true"
