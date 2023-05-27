@@ -48,7 +48,7 @@ spec:
       - --crd-source-kind=DNSEndpoint
     policy: sync
     sources: ["crd", "ingress"]
-    txtOwnerId: "default"
+    txtPrefix: k8s.
     domainFilters:
       - "${SECRET_DOMAIN}"
     serviceMonitor:
