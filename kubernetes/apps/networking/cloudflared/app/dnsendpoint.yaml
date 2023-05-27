@@ -8,6 +8,6 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "services.${SECRET_CLUSTER_DOMAIN}"
 spec:
   endpoints:
-    - dnsName: "services.${CLUSTER_DOMAIN}"
+    - dnsName: "services.${SECRET_CLUSTER_DOMAIN}"
       recordType: CNAME
       targets: ["${SECRET_CLOUDFLARE_TUNNEL_ID}.cfargotunnel.com"]
