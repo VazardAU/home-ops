@@ -13,7 +13,7 @@ originRequest:
 
 tunnel: ${CLOUDFLARED_TUNNEL_ID}
 
-credentials-file: /etc/cloudflared/credentials.json
+credentials-file: /etc/cloudflared/creds/credentials.json
 
 ingress:
   - hostname: "${SECRET_CLUSTER_DOMAIN}"
