@@ -32,14 +32,13 @@ access_control:
       subject: ["group:admins", "group:users"]
       networks:
         - private
-    # Navi bypass on LAN
+    # Navidrome
     - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
+      resources: ["^/ping.*$", "^/rest.*$"]
       policy: bypass
-      resources: ["^/rest([/?].*)?$"]
-    # Deny public resources
-    # - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
-    #   resources: ["^/metrics.*$"]
-    #   policy: deny
+    - domain: ["music.${SECRET_CLUSTER_DOMAIN}"]
+      resources: ["^/metrics.*$"]
+      policy: deny
     # Two factors auth for WAN
     - domain:
         - "*.${SECRET_CLUSTER_DOMAIN}"

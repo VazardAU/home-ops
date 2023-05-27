@@ -33,6 +33,8 @@ spec:
         type: LoadBalancer
         loadBalancerIP: "${CLUSTER_LB_NGINX}"
         externalTrafficPolicy: Local
+        annotations:
+          external-dns.alpha.kubernetes.io/hostname: services.${SECRET_CLUSTER_DOMAIN}
       publishService:
         enabled: true
       ingressClassResource:
