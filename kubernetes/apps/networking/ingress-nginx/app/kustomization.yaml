@@ -7,3 +7,9 @@ resources:
   - ./dashboard
   - ./helmrelease.yaml
   - ./clusterpolicy.yaml
+configMapGenerator:
+  - name: cloudflare-proxied-networks
+    files:
+      - cloudflare-proxied-networks.txt
+generatorOptions:
+  disableNameSuffixHash: true
