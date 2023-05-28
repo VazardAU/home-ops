@@ -1,8 +1,8 @@
 ---
 clusterName: cluster-0
 
-talosVersion: v1.4.1
-kubernetesVersion: v1.27.1
+talosVersion: v1.4.4
+kubernetesVersion: v1.27.2
 endpoint: https://cluster-0.${domainName}:6443
 
 cniConfig:
@@ -40,6 +40,25 @@ nodes:
     ipAddress: 192.168.10.206
     controlPlane: false
     installDisk: /dev/sda
+    patches:
+      - |-
+        - op: add
+          path: /machine/install/extensions
+          value:
+            - image: ghcr.io/siderolabs/nvidia-open-gpu-kernel-modules:530.41.03-v1.4.0
+            - image: ghcr.io/siderolabs/nvidia-container-toolkit:530.41.03-v1.12.1
+        - op: add
+          path: /machine/kernel
+          value:
+            modules:
+              - name: nvidia
+              - name: nvidia_uvm
+              - name: nvidia_drm
+              - name: nvidia_modeset
+        - op: add
+          path: /machine/sysctls
+          value:
+            net.core.bpf_jit_harden: 1
 
 controlPlane:
   patches:
