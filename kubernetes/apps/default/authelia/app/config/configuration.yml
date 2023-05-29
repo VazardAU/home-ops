@@ -106,3 +106,12 @@ identity_providers:
         scopes: ["openid", "profile", "groups", "email"]
         redirect_uris: ["https://gitops.${CLUSTER_DOMAIN}/oauth2/callback"]
         userinfo_signing_algorithm: none
+      - id: jellyfin
+        description: Jellyfin
+        secret: "${SECRET_JELLYFIN_OAUTH_CLIENT_SECRET}"
+        public: false
+        authorization_policy: two_factor
+        pre_configured_consent_duration: 1y
+        scopes: ["openid", "profile", "groups", "email"]
+        redirect_uris: ["https://gitops.${CLUSTER_DOMAIN}/oauth2/callback"]
+        userinfo_signing_algorithm: none
