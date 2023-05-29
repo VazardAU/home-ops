@@ -30,3 +30,4 @@ resources:
   # - ./obsidian-couchdb/ks.yaml
   - ./nextcloud/ks.yaml
   - ./navidrome/ks.yaml
+  - ./external-ingress/ks.yaml
