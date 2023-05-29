@@ -34,3 +34,6 @@ resources:
   - ./external-secrets.yaml
   - ./nextcloud.yaml
   - ./mvisonneau.yaml
+  - ./angelnu.yaml
+  - ./dex.yaml
+  - ./oauth2-proxy.yaml
