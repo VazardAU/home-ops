@@ -35,37 +35,13 @@ spec:
     image:
       repository: quay.io/oauth2-proxy/oauth2-proxy
       tag: v7.4.0
-    env:
-      OAUTH2_PROXY_HTTP_ADDRESS: 0.0.0.0:4180
-      OAUTH2_PROXY_METRICS_ADDRESS: 0.0.0.0:44180
-      OAUTH2_PROXY_COOKIE_DOMAINS: ${SECRET_CLUSTER_DOMAIN}
-      OAUTH2_PROXY_COOKIE_SECRET:
-        valueFrom:
-          secretKeyRef:
-            name: *app
-            key: cookie-secret
-      OAUTH2_PROXY_COOKIE_SECURE: true
-      OAUTH2_PROXY_EMAIL_DOMAINS: "*"
-      OAUTH2_PROXY_PROVIDER: oidc
-      OAUTH2_PROXY_OIDC_ISSUER_URL:
-        valueFrom:
-          secretKeyRef:
-            name: *app
-            key: oidc-issuer-url
-      OAUTH2_PROXY_CLIENT_ID:
-        valueFrom:
-          secretKeyRef:
-            name: *app
-            key: client-id
-      OAUTH2_PROXY_CLIENT_SECRET:
-        valueFrom:
-          secretKeyRef:
-            name: *app
-            key: client-secret
-      OAUTH2_PROXY_PASS_AUTHORIZATION_HEADER: true
-      OAUTH2_PROXY_PASS_USER_HEADERS: true
-      OAUTH2_PROXY_PREFER_EMAIL_TO_USER: true
-      OAUTH2_PROXY_WHITELIST_DOMAINS: .${SECRET_CLUSTER_DOMAIN}
+    extraArgs:
+      provider: oidc
+      skip-provider-button:
+      pass-authorization-header:
+      email-domain: "*"
+      cookie-domain: .${SECRET_CLUSTER_DOMAIN}
+      whitelist-domain: .${SECRET_CLUSTER_DOMAIN}
     ingress:
       main:
         enabled: true
@@ -80,10 +56,20 @@ spec:
         tls:
           - hosts:
               - *host
-    resources:
-      requests:
-        cpu: 15m
-        memory: 105M
-      limits:
-        cpu: 20m
-        memory: 105M
+  valuesFrom:
+  - targetPath: config.clientID
+    kind: Secret
+    name: *app
+    valuesKey: client-id
+  - targetPath: config.clientSecret
+    kind: Secret
+    name: *app
+    valuesKey: client-secret
+  - targetPath: config.cookieSecret
+    kind: Secret
+    name: *app
+    valuesKey: cookie-secret
+  - targetPath: extraArgs.oidc-issuer-url
+    kind: Secret
+    name: *app
+    valuesKey: oidc-issuer-url
