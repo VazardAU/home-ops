@@ -52,7 +52,7 @@ spec:
         enabled: true
     ingress:
       main:
-        enabled: false
+        enabled: true
         ingressClassName: "nginx"
         annotations:
           auth.home.arpa/enabled: "true"

@@ -75,7 +75,7 @@ spec:
       type: postgresql
       host: postgres-rw.default.svc.cluster.local.
     ingress:
-      enabled: false
+      enabled: true
       className: nginx
       annotations:
         external-dns.home.arpa/enabled: "true"
