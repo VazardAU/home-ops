@@ -42,7 +42,7 @@ spec:
             port: 8096
     ingress:
       main:
-        enabled: true
+        enabled: false
         ingressClassName: "nginx"
         annotations:
           hajimari.io/icon: simple-icons:jellyfin

@@ -45,7 +45,7 @@ spec:
             port: *port
     ingress:
       main:
-        enabled: true
+        enabled: false
         ingressClassName: "nginx"
         annotations:
           auth.home.arpa/enabled: "true"

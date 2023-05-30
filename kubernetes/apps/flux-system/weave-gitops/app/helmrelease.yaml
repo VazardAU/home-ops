@@ -31,7 +31,7 @@ spec:
       create: true
       username: admin
     ingress:
-      enabled: true
+      enabled: false
       className: nginx
       annotations:
         hajimari.io/icon: mdi:sawtooth-wave
