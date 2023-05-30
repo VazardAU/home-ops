@@ -43,15 +43,14 @@ spec:
       cookie-domain: .${SECRET_CLUSTER_DOMAIN}
       whitelist-domain: .${SECRET_CLUSTER_DOMAIN}
     ingress:
-      main:
-        enabled: true
-        annotations:
-          external-dns.alpha.kubernetes.io/target: "services.${SECRET_CLUSTER_DOMAIN}"
-        hosts:
-          - host: &host "oauth.${SECRET_CLUSTER_DOMAIN}"
-            paths:
-              - path: /oauth2
-                pathType: Prefix
-        tls:
-          - hosts:
-              - *host
+      enabled: true
+      path: /oauth2
+      pathType: Prefix
+      annotations:
+        external-dns.home.arpa/enabled: "true"
+      hosts:
+        - &host oauth.${SECRET_CLUSTER_DOMAIN}
+      tls:
+        - hosts:
+            - *host
+
