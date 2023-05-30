@@ -27,9 +27,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    controller:
-      replicas: 3
-      strategy: RollingUpdate
+    config:
+      existingSecret: *app
     podAnnotations:
       secret.reloader.stakater.com/reload: *app
     image:
@@ -37,6 +36,7 @@ spec:
       tag: v7.4.0
     extraArgs:
       provider: oidc
+      oidc-issuer-url: ${SECRET_AUTH0_DOMAIN}
       skip-provider-button:
       pass-authorization-header:
       email-domain: "*"
@@ -56,20 +56,3 @@ spec:
         tls:
           - hosts:
               - *host
-  valuesFrom:
-  - targetPath: config.clientID
-    kind: Secret
-    name: *app
-    valuesKey: client-id
-  - targetPath: config.clientSecret
-    kind: Secret
-    name: *app
-    valuesKey: client-secret
-  - targetPath: config.cookieSecret
-    kind: Secret
-    name: *app
-    valuesKey: cookie-secret
-  - targetPath: extraArgs.oidc-issuer-url
-    kind: Secret
-    name: *app
-    valuesKey: oidc-issuer-url
