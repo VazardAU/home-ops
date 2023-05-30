@@ -8,7 +8,7 @@ metadata:
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
-  path: ./kubernetes/apps/security/oauth2-proxy/app
+  path: ./kubernetes/apps/networking/oauth2-proxy/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -17,7 +17,7 @@ spec:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
       name: oauth2-proxy
-      namespace: security
+      namespace: networking
   interval: 30m
   retryInterval: 1m
   timeout: 3m

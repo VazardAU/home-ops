@@ -11,3 +11,4 @@ resources:
   - ./k8s-gateway/ks.yaml
   # - ./tailscale-relay/ks.yaml
   - ./cloudflared/ks.yaml
+  - ./oauth2-proxy/ks.yaml
