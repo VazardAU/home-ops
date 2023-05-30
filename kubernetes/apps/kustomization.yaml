@@ -12,4 +12,4 @@ resources:
   - ./networking
   - ./rook-ceph
   - ./volsync
-  - ./security
+  # - ./security
