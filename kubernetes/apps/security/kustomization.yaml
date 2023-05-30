@@ -6,6 +6,6 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
-  - ./oauth2-proxy/ks.yaml
+  # - ./oauth2-proxy/ks.yaml
 commonLabels:
   app.kubernetes.io/managed-by: Helm
