@@ -249,7 +249,7 @@ spec:
                 requests:
                   storage: 1Gi
       ingress:
-        enabled: true
+        enabled: false
         pathType: Prefix
         ingressClassName: "nginx"
         annotations:
