@@ -12,3 +12,5 @@ resources:
   # - ./tailscale-relay/ks.yaml
   - ./cloudflared/ks.yaml
   - ./oauth2-proxy/ks.yaml
+  - ./unifi/ks.yaml
+  - ./opnsense/ks.yaml
