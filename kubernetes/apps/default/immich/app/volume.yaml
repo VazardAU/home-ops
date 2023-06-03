@@ -12,7 +12,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: ${LOCAL_LAN_TRUENAS}
-    path: /mnt/data/photos
+    path: /mnt/data/photos/immich-upload
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
