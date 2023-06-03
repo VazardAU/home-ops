@@ -60,5 +60,3 @@ spec:
   valuesFrom:
     - kind: Secret
       name: *app
-      valuesKey: adminPassword
-      targetPath: adminUser.passwordHash
