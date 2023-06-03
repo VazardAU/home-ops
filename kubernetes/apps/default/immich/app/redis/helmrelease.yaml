@@ -42,8 +42,3 @@ spec:
       requests:
         cpu: 10m
         memory: 10Mi
-    podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
-      fsGroupChangePolicy: "OnRootMismatch"
