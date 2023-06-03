@@ -34,3 +34,5 @@ resources:
   - ./immich/ks.yaml
   - ./changedetection/ks.yaml
   - ./readarr/ks.yaml
+  - ./calibre/ks.yaml
+  - ./calibre-web/ks.yaml
