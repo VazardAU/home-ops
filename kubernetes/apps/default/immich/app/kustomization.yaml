@@ -13,3 +13,4 @@ resources:
   - ./server
   - ./typesense
   - ./web
+  - ./cli
