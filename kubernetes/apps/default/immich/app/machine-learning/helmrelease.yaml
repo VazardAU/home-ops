@@ -52,6 +52,10 @@ spec:
         enabled: true
         existingClaim: immich-nfs
         mountPath: /usr/src/app/upload
+      temp:
+        enabled: true
+        existingClaim: immich-nfs-temp
+        mountPath: /usr/src/app/temp
       cache:
         enabled: true
         type: emptyDir

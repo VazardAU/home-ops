@@ -12,7 +12,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: ${LOCAL_LAN_TRUENAS}
-    path: /mnt/data/photos/immich-upload
+    path: /mnt/data/photos/upload
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -43,3 +43,31 @@ spec:
   resources:
     requests:
       storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: immich-nfs-temp
+spec:
+  storageClassName: immich-nfs-temp
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${LOCAL_LAN_TRUENAS}
+    path: /mnt/data/backup/unraid-backup-data/data/sync
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: immich-nfs-temp
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: immich-nfs-temp
+  resources:
+    requests:
+      storage: 1Mi
