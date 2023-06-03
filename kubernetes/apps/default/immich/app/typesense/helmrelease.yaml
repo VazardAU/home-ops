@@ -36,9 +36,9 @@ spec:
       tag: 0.24.1
     envFrom:
       - secretRef:
-          name: *app
+          name: immich
       - configMapRef:
-          name: *app
+          name: immich
     service:
       main:
         ports:

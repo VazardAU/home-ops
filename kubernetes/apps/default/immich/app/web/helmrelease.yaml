@@ -42,9 +42,9 @@ spec:
       - ./entrypoint.sh
     envFrom:
       - secretRef:
-          name: *app
+          name: immich
       - configMapRef:
-          name: *app
+          name: immich
     service:
       main:
         ports:

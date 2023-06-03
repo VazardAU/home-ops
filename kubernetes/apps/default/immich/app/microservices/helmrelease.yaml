@@ -42,9 +42,9 @@ spec:
       - ./start-microservices.sh
     envFrom:
       - secretRef:
-          name: *app
+          name: immich
       - configMapRef:
-          name: *app
+          name: immich
     service:
       main:
         enabled: false

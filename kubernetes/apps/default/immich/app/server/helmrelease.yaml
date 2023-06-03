@@ -36,7 +36,7 @@ spec:
         imagePullPolicy: IfNotPresent
         envFrom:
           - secretRef:
-              name: *app
+              name: immich
     controller:
       replicas: 2
       strategy: RollingUpdate
@@ -50,9 +50,9 @@ spec:
       - ./start-server.sh
     envFrom:
       - secretRef:
-          name: *app
+          name: immich
       - configMapRef:
-          name: *app
+          name: immich
     service:
       main:
         ports:
