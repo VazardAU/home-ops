@@ -40,3 +40,4 @@ resources:
   - ./libreddit/ks.yaml
   - ./invidious/ks.yaml
   - ./nitter/ks.yaml
+  - ./whoogle/ks.yaml
