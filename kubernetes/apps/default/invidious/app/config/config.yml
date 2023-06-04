@@ -527,7 +527,7 @@ default_user_preferences:
   ##
   ## Default: US
   ##
-  #region: US
+  region: AU
 
   ##
   ## Top 3 preferred languages for video captions.
@@ -726,7 +726,7 @@ default_user_preferences:
   ## Accepted values: dash, hd720, medium, small
   ## Default: hd720
   ##
-  #quality: hd720
+  quality: dash
 
   ##
   ## Default dash video quality.
@@ -739,7 +739,7 @@ default_user_preferences:
   ##    720p, 480p, 360p, 240p, 144p, worst
   ## Default: auto
   ##
-  #quality_dash: auto
+  quality_dash: best
 
   ##
   ## Default video playback speed.
