@@ -1,9 +1,9 @@
-- op: remove
+- op: add
   path: /machine/install/extensions
   value:
-    - image: ghcr.io/siderolabs/nvidia-open-gpu-kernel-modules:530.41.03-v1.4.0
+    - image: ghcr.io/siderolabs/nvidia-open-gpu-kernel-modules:530.41.03-v1.4.5
     - image: ghcr.io/siderolabs/nvidia-container-toolkit:530.41.03-v1.12.1
-- op: remove
+- op: add
   path: /machine/kernel
   value:
     modules:
@@ -11,7 +11,7 @@
       - name: nvidia_uvm
       - name: nvidia_drm
       - name: nvidia_modeset
-- op: remove
+- op: add
   path: /machine/sysctls
   value:
     net.core.bpf_jit_harden: 1
