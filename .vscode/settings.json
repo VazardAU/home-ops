@@ -8,6 +8,7 @@
         "**/kubernetes/**/*.sops.toml": "plaintext"
     },
     "yaml.schemas": {
+
         "ansible": "ansible/*.yml",
         "Kubernetes": "kubernetes/*.yaml"
     },
