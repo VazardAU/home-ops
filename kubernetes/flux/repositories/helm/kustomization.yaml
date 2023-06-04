@@ -37,3 +37,5 @@ resources:
   - ./angelnu.yaml
   - ./dex.yaml
   - ./oauth2-proxy.yaml
+  - ./nvidia-device-plugin.yaml
+  - ./nvidia.yaml
