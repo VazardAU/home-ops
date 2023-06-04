@@ -33,3 +33,7 @@ spec:
     runtimeClassName: nvidia
     nodeSelector:
       feature.node.kubernetes.io/custom-nvidia-gpu: "true"
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: 50m
