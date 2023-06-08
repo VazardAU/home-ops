@@ -1,4 +1,4 @@
-- op: add
+- op: remove
   path: /machine/files
   value:
     - content: |
@@ -7,4 +7,4 @@
             [plugins."io.containerd.grpc.v1.cri".containerd]
               default_runtime_name = "nvidia"
       path: /etc/cri/conf.d/20-customization.part
-      op: create
+      op: delete
