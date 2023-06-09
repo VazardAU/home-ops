@@ -36,9 +36,10 @@ spec:
       tag: v7.4.0
     extraArgs:
       provider: oidc
-      oidc-issuer-url: ${SECRET_AUTH0_DOMAIN}
-      skip-provider-button:
-      pass-authorization-header:
+      oidc-issuer-url: https://dex.${SECRET_CLUSTER_DOMAIN}
+      skip-provider-button: "true"
+      pass-authorization-header: "true"
+      pass_access_token: "true"
       email-domain: "*"
       cookie-domain: .${SECRET_CLUSTER_DOMAIN}
       whitelist-domain: .${SECRET_CLUSTER_DOMAIN}
