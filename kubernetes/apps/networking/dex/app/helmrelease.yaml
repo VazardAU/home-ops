@@ -2,81 +2,55 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: &app dex
+  name: dex
   namespace: networking
 spec:
-  interval: 15m
+  releaseName: dex
+  interval: 5m
   chart:
     spec:
       chart: dex
       version: 0.14.1
       sourceRef:
         kind: HelmRepository
-        name: dex
+        name: dex-charts
         namespace: flux-system
-  maxHistory: 3
-  install:
-    createNamespace: true
-    remediation:
-      retries: 3
-    crds: CreateReplace
-  upgrade:
-    cleanupOnFail: true
-    remediation:
-      retries: 3
-    crds: CreateReplace
-  uninstall:
-    keepHistory: false
+      interval: 5m
   values:
-    podAnnotations:
-      secret.reloader.stakater.com/reload: *app
     image:
       repository: ghcr.io/dexidp/dex
       tag: v2.36.0
     env:
       KUBERNETES_POD_NAMESPACE: networking
-    envFrom:
-      - secretRef:
-          name: *app
+    ingress:
+      enabled: true
+      className: nginx
+      annotations:
+        external-dns.home.arpa/enabled: "true"
+      hosts:
+        - host: &host "dex.${SECRET_CLUSTER_DOMAIN}"
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - *host
     config:
       issuer: https://dex.${SECRET_CLUSTER_DOMAIN}
-      connectors:
-        - type: github
-          id: github
-          name: GitHub
-          config:
-            clientID: $(DEX_GITHUB_CLIENT_ID)
-            clientSecret: $(DEX_GITHUB_CLIENT_SECRET)
-            redirectURI: https://dex.${SECRET_CLUSTER_DOMAIN}/callback
-        - type: oidc
-          id: google
-          name: Google
-          config:
-            issuer: https://accounts.google.com
-            clientID: $(DEX_GOOGLE_CLIENT_ID)
-            clientSecret: $(DEX_GOOGLE_CLIENT_SECRET)
-            redirectURI: https://dex.${SECRET_CLUSTER_DOMAIN}/callback
-      staticClients:
-        - name: oauth2-proxy
-          id: $(DEX_OAUTH2_PROXY_CLIENT_ID)
-          secret: $(DEX_OAUTH2_PROXY_CLIENT_SECRET)
-          redirectURIs:
-            - https://auth.${SECRET_CLUSTER_DOMAIN}/oauth2/callback
       storage:
         type: kubernetes
         config:
           inCluster: true
-      frontend:
-        theme: "tectonic"
-        issuer: Strallow Cloud
-        issuerUrl: https://${SECRET_CLUSTER_DOMAIN}
-        logoUrl: https://imgur.com/Idzzln9.png
       web:
         http: 0.0.0.0:5556
-      enablePasswordDB: false
+      frontend:
+        theme: "tectonic"
+        issuer: "Strallow Cloud"
+        issuerUrl: "https://${SECRET_CLUSTER_DOMAIN}"
+        logoUrl: http://icons.iconarchive.com/icons/icons-land/metro-halloween/512/Cool-icon.png
       expiry:
-        signingKeys: 6h
-        idTokens: 24h
+        signingKeys: "6h"
+        idTokens: "24h"
       logger:
         level: debug
         format: json
@@ -84,15 +58,28 @@ spec:
         responseTypes: ["code", "token", "id_token"]
         skipApprovalScreen: true
         alwaysShowLoginScreen: false
-    ingress:
-      enabled: true
-      annotations:
-        external-dns.home.arpa/enabled: "true"
-      hosts:
-        - host: &host dex.${SECRET_CLUSTER_DOMAIN}
-          paths:
-            - path: /
-              pathType: Prefix
-      tls:
-        - hosts:
-            - *host
+      enablePasswordDB: false
+      connectors:
+        # GitHub configure 'OAuth Apps' -> 'New OAuth App', add callback URL
+        # https://github.com/settings/developers
+        - type: github
+          id: github
+          name: GitHub
+          config:
+            clientID: ${DEX_GITHUB_CLIENT_ID}
+            clientSecret: ${DEX_GITHUB_CLIENT_SECRET}
+            redirectURI: https://dex.${SECRET_CLUSTER_DOMAIN}/callback
+            # 'orgs' can be used to map groups from Github
+            # https://github.com/coreos/dex/blob/master/Documentation/connectors/github.md
+      staticClients:
+        - name: oauth2-proxy
+          id: $(DEX_OAUTH2_PROXY_CLIENT_ID)
+          secret: $(DEX_OAUTH2_PROXY_CLIENT_SECRET)
+          redirectURIs:
+            - https://auth.${SECRET_CLUSTER_DOMAIN}/oauth2/callback
+    resources:
+      requests:
+        memory: 250Mi
+        cpu: 25m
+      limits:
+        memory: 250Mi
