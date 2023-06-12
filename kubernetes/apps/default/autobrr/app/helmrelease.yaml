@@ -33,7 +33,7 @@ spec:
         imagePullPolicy: IfNotPresent
         envFrom: &envFrom
           - secretRef:
-              name: autobrr-secret
+              name: *app
     image:
       repository: ghcr.io/autobrr/autobrr
       tag: v1.26.2
