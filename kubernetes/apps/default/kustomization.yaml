@@ -41,3 +41,5 @@ resources:
   - ./invidious/ks.yaml
   - ./nitter/ks.yaml
   - ./whoogle/ks.yaml
+  - ./autobrr/ks.yaml
+  - ./omegabrr/ks.yaml

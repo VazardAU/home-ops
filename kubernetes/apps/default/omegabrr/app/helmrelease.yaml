@@ -1,9 +1,8 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: &app autobrr
+  name: &app omegabrr
   namespace: default
 spec:
   interval: 15m
@@ -27,30 +26,18 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    initContainers:
-      01-init-db:
-        image: ghcr.io/onedr0p/postgres-init:14.8
-        imagePullPolicy: IfNotPresent
-        envFrom: &envFrom
-          - secretRef:
-              name: autobrr-secret
     image:
-      repository: ghcr.io/autobrr/autobrr
-      tag: v1.26.2
+      repository: ghcr.io/autobrr/omegabrr
+      tag: v1.9.0
     controller:
       type: statefulset
     env:
       TZ: "${TIMEZONE}"
-      AUTOBRR__CHECKFORUPDATES: "false"
-      AUTOBRR__HOST: 0.0.0.0
-      AUTOBRR__PORT: &port 80
-      AUTOBRR__LOGLEVEL: TRACE
-    envFrom: *envFrom
     service:
       main:
         ports:
           http:
-            port: 7474
+            port: 80
     ingress:
       main:
         enabled: true
@@ -73,17 +60,8 @@ spec:
     persistence:
       config:
         enabled: true
-        type: emptyDir
-      config-file:
-        enabled: true
-        type: configMap
-        name: autobrr-configmap
-        mountPath: /config/config.toml
-        subPath: config.toml
+        type: secret
+        name: *app
+        mountPath: /config/config.yaml
+        subPath: config.yaml
         readOnly: true
-    resources:
-      requests:
-        memory: 250Mi
-        cpu: 10m
-      limits:
-        memory: 500Mi

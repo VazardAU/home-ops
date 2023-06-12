@@ -19,10 +19,12 @@ spec:
     createNamespace: true
     remediation:
       retries: 3
+    crds: CreateReplace
   upgrade:
     cleanupOnFail: true
     remediation:
       retries: 3
+    crds: CreateReplace
   uninstall:
     keepHistory: false
   values:
@@ -38,22 +40,22 @@ spec:
           name: *app
     config:
       issuer: https://dex.${SECRET_CLUSTER_DOMAIN}
-      # connectors:
-      #   - type: github
-      #     id: github
-      #     name: GitHub
-      #     config:
-      #       clientID: $(DEX_GITHUB_CLIENT_ID)
-      #       clientSecret: $(DEX_GITHUB_CLIENT_SECRET)
-      #       redirectURI: https://dex.${SECRET_CLUSTER_DOMAIN}/callback
-      #   - type: oidc
-      #     id: google
-      #     name: Google
-      #     config:
-      #       issuer: https://accounts.google.com
-      #       clientID: $(DEX_GOOGLE_CLIENT_ID)
-      #       clientSecret: $(DEX_GOOGLE_CLIENT_SECRET)
-      #       redirectURI: https://dex.${SECRET_CLUSTER_DOMAIN}/callback
+      connectors:
+        - type: github
+          id: github
+          name: GitHub
+          config:
+            clientID: $(DEX_GITHUB_CLIENT_ID)
+            clientSecret: $(DEX_GITHUB_CLIENT_SECRET)
+            redirectURI: https://dex.${SECRET_CLUSTER_DOMAIN}/callback
+        - type: oidc
+          id: google
+          name: Google
+          config:
+            issuer: https://accounts.google.com
+            clientID: $(DEX_GOOGLE_CLIENT_ID)
+            clientSecret: $(DEX_GOOGLE_CLIENT_SECRET)
+            redirectURI: https://dex.${SECRET_CLUSTER_DOMAIN}/callback
       staticClients:
         - name: oauth2-proxy
           id: $(DEX_OAUTH2_PROXY_CLIENT_ID)
@@ -69,6 +71,9 @@ spec:
         issuer: Strallow Cloud
         issuerUrl: https://${SECRET_CLUSTER_DOMAIN}
         logoUrl: https://imgur.com/Idzzln9.png
+      web:
+        http: 0.0.0.0:5556
+      enablePasswordDB: false
       expiry:
         signingKeys: 6h
         idTokens: 24h
