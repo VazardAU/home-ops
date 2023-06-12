@@ -43,3 +43,4 @@ resources:
   - ./whoogle/ks.yaml
   - ./autobrr/ks.yaml
   - ./omegabrr/ks.yaml
+  - ./minecraft/ks.yaml
