@@ -57,6 +57,10 @@ spec:
         enabled: true
         existingClaim: immich-nfs-temp
         mountPath: /usr/src/app/temp
+      temp2:
+        enabled: true
+        existingClaim: immich-nfs-temp2
+        mountPath: /usr/src/app/temp2
     topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname

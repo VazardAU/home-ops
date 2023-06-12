@@ -71,3 +71,31 @@ spec:
   resources:
     requests:
       storage: 1Mi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: immich-nfs-temp2
+spec:
+  storageClassName: immich-nfs-temp2
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: ${LOCAL_LAN_TRUENAS}
+    path: /mnt/data/backup/unraid-backup-data/data/gallery_import
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: immich-nfs-temp2
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: immich-nfs-temp2
+  resources:
+    requests:
+      storage: 1Mi
