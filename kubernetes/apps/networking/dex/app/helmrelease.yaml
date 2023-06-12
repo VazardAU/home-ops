@@ -84,3 +84,15 @@ spec:
         responseTypes: ["code", "token", "id_token"]
         skipApprovalScreen: true
         alwaysShowLoginScreen: false
+    ingress:
+      enabled: true
+      annotations:
+        external-dns.home.arpa/enabled: "true"
+      hosts:
+        - host: &host dex.${SECRET_CLUSTER_DOMAIN}
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - *host
