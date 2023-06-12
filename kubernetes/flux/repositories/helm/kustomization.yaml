@@ -39,3 +39,4 @@ resources:
   - ./oauth2-proxy.yaml
   - ./nvidia-device-plugin.yaml
   - ./nvidia.yaml
+  - ./minecraft-server.yaml
