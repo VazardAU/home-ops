@@ -32,36 +32,20 @@ spec:
   values:
     config:
       existingSecret: *app
-      configFile: |
-        provider = "oidc"
-        oidc_issuer_url = "https://dex.${SECRET_CLUSTER_DOMAIN}"
-        auth_logging = true
-        cookie_domains = ".${SECRET_CLUSTER_DOMAIN}"
-        cookie_httponly = true
-        cookie_name = "_strallow_oauth"
-        cookie_refresh = "1h"
-        cookie_samesite = "lax"
-        cookie_secure = true
-        email_domains = [ "*" ]
-        pass_access_token = true
-        pass_authorization_header = true
-        pass_basic_auth = false
-        request_logging = true
-        session_store_type = "cookie"
-        silence_ping_logging = true
-        set_authorization_header = true
-        set_xauthrequest = true
-        skip_jwt_bearer_tokens = true
-        skip_provider_button = true
-        ssl_insecure_skip_verify = false
-        standard_logging = true
-        upstreams = [ "static://200" ]
-        whitelist_domains = ".${SECRET_CLUSTER_DOMAIN}"
     podAnnotations:
       secret.reloader.stakater.com/reload: *app
     image:
       repository: quay.io/oauth2-proxy/oauth2-proxy
       tag: v7.4.0
+    extraArgs:
+      provider: oidc
+      oidc-issuer-url: ${SECRET_AUTH0_DOMAIN}
+      skip-provider-button: "true"
+      pass-authorization-header: "true"
+      pass_access_token: "true"
+      email-domain: "*"
+      cookie-domain: .${SECRET_CLUSTER_DOMAIN}
+      whitelist-domain: .${SECRET_CLUSTER_DOMAIN}
     ingress:
       enabled: true
       path: /oauth2

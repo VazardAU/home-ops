@@ -16,4 +16,3 @@ resources:
   - ./opnsense/ks.yaml
   - ./omada/ks.yaml
   - ./multus/ks.yaml
-  - ./dex/ks.yaml
