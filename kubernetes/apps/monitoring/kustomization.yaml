@@ -12,3 +12,5 @@ resources:
   # - ./loki/ks.yaml
   - ./smartctl-exporter/ks.yaml
   - ./vector/ks.yaml
+  - ./goldilocks/ks.yaml
+  - ./node-problem-detector/ks.yaml

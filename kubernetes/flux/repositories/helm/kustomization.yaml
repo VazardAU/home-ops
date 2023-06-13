@@ -40,3 +40,5 @@ resources:
   - ./nvidia-device-plugin.yaml
   - ./nvidia.yaml
   - ./minecraft-server.yaml
+  - ./deliveryhero.yaml
+  - ./fairwinds.yaml
