@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: dex
+  name: &app dex
   namespace: networking
 spec:
   releaseName: dex
