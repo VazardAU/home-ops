@@ -36,9 +36,8 @@ spec:
       tag: v7.4.0
     extraArgs:
       provider: google
-      skip-provider-button: "true"
+      skip-provider-button:
       pass-authorization-header:
-      pass_access_token:
       email-domain: "*"
       cookie-domain: .${SECRET_CLUSTER_DOMAIN}
       cookie-refresh: 1h
