@@ -36,7 +36,7 @@ spec:
               name: *app
     image:
       repository: ghcr.io/autobrr/autobrr
-      tag: v1.26.2
+      tag: v1.27.0
     controller:
       type: statefulset
     env:
