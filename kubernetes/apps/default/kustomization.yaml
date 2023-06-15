@@ -46,3 +46,4 @@ resources:
   - ./minecraft/ks.yaml
   - ./rediary/ks.yaml
   - ./tandoor/ks.yaml
+  - ./ghostfolio/ks.yaml
