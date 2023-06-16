@@ -9,24 +9,7 @@ spec:
   values:
     initContainers:
       init-db:
-        image: ghcr.io/onedr0p/postgres-initdb:14.8
-        env:
-          - name: POSTGRES_HOST
-            value: ${POSTGRES_HOST}
-          - name: POSTGRES_DB
-            value: tandoor
-          - name: POSTGRES_SUPER_PASS
-            valueFrom:
-              secretKeyRef:
-                name: postgres-superuser
-                key: password
-          - name: POSTGRES_USER
-            valueFrom:
-              secretKeyRef:
-                name: tandoor
-                key: POSTGRES_USER
-          - name: POSTGRES_PASS
-            valueFrom:
-              secretKeyRef:
-                name: tandoor
-                key: POSTGRES_PASSWORD
+        image: ghcr.io/onedr0p/postgres-init:14.8
+        envFrom:
+          - secretRef:
+              name: *app

@@ -28,14 +28,12 @@ spec:
     keepHistory: false
   values:
     controller:
+      type: statefulset
       annotations:
         reloader.stakater.com/auto: "true"
     image:
       repository: vabene1111/recipes
       tag: 1.4.12
-    envFrom:
-      - secretRef:
-          name: *app
     command:
       - /opt/recipes/venv/bin/gunicorn
       - -b
@@ -129,7 +127,7 @@ spec:
             value: tandoor
         envFrom:
           - secretRef:
-              name: tandoor-secret
+              name: *app
         command:
         - sh
         - -c
