@@ -38,7 +38,7 @@ resources:
   - ./calibre-web/ks.yaml
   # - ./games-on-whales/ks.yaml
   - ./libreddit/ks.yaml
-  - ./invidious/ks.yaml
+  # - ./invidious/ks.yaml
   - ./nitter/ks.yaml
   - ./whoogle/ks.yaml
   # - ./autobrr/ks.yaml
