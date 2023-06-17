@@ -45,5 +45,5 @@ resources:
   # - ./omegabrr/ks.yaml
   - ./minecraft/ks.yaml
   - ./rediary/ks.yaml
-  - ./tandoor/ks.yaml
+  # - ./tandoor/ks.yaml
   - ./ghostfolio/ks.yaml
