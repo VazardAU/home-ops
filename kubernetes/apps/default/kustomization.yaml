@@ -48,3 +48,4 @@ resources:
   - ./tandoor/ks.yaml
   - ./ghostfolio/ks.yaml
   - ./mealie/ks.yaml
+  - ./outline/ks.yaml
