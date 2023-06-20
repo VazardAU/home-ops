@@ -47,3 +47,4 @@ resources:
   - ./rediary/ks.yaml
   - ./tandoor/ks.yaml
   - ./ghostfolio/ks.yaml
+  - ./mealie/ks.yaml
