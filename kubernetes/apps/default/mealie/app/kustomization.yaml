@@ -5,6 +5,7 @@ kind: Kustomization
 namespace: default
 resources:
   - ./volume.yaml
+  - ./externalsecret.yaml
   - ./helmrelease.yaml
 patchesStrategicMerge:
   - ./patches/postgres.yaml
