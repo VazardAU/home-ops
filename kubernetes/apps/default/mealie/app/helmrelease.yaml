@@ -42,12 +42,19 @@ spec:
             value: "false"
           - name: TZ
             value: ${TIMEZONE}
+          - name: DB_ENGINE
+            value: postgres
+          - name: POSTGRES_PORT
+            value: 5432
         ports:
           - name: api
             containerPort: 9000
         volumeMounts:
           - name: api-data
             mountPath: /app/data/
+        envFrom:
+          - secretRef:
+              name: *app
     service:
       main:
         ports:
