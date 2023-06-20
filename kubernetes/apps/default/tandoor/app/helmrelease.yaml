@@ -59,7 +59,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:chef-hat
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_CLUSTER_DOMAIN}"
+          - host: &host "nuggets.${SECRET_CLUSTER_DOMAIN}"
             paths: &paths
               - path: /
               - path: /media
