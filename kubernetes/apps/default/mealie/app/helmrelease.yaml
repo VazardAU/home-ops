@@ -46,6 +46,8 @@ spec:
             value: postgres
           - name: POSTGRES_PORT
             value: 5432
+          - name: BASE_URL
+            value: "https://nuggets.${SECRET_CLUSTER_DOMAIN}"
         ports:
           - name: api
             containerPort: 9000
