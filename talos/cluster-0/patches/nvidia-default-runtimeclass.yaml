@@ -1,4 +1,4 @@
-- op: remove
+- op: add
   path: /machine/files
   value:
     - content: |
