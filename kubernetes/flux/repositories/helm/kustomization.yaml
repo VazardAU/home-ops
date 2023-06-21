@@ -42,3 +42,4 @@ resources:
   - ./minecraft-server.yaml
   - ./deliveryhero.yaml
   - ./fairwinds.yaml
+  - ./windmill.yaml
