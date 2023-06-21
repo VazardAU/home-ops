@@ -49,3 +49,4 @@ resources:
   - ./ghostfolio/ks.yaml
   - ./mealie/ks.yaml
   - ./outline/ks.yaml
+  - ./windmill/ks.yaml
