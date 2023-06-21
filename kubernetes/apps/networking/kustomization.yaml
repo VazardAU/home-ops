@@ -15,4 +15,4 @@ resources:
   - ./unifi/ks.yaml
   - ./opnsense/ks.yaml
   - ./omada/ks.yaml
-  - ./multus/ks.yaml
+  # - ./multus/ks.yaml
