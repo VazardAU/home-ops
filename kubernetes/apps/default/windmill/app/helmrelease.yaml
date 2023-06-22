@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: windmill
-      version: 1.6.26
+      version: 1.6.27
       sourceRef:
         kind: HelmRepository
         name: windmill
