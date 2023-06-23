@@ -31,7 +31,7 @@ resources:
   - ./nextcloud/ks.yaml
   - ./navidrome/ks.yaml
   ## - ./external-ingress/ks.yaml
-  - ./immich/ks.yaml
+  # - ./immich/ks.yaml
   - ./changedetection/ks.yaml
   - ./readarr/ks.yaml
   - ./calibre/ks.yaml
