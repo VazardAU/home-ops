@@ -14,4 +14,4 @@ resources:
   # - ./vector/ks.yaml
   - ./goldilocks/ks.yaml
   - ./node-problem-detector/ks.yaml
-  - ./uptime-kuma/ks.yaml
+  # - ./uptime-kuma/ks.yaml

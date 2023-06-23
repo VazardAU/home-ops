@@ -43,9 +43,9 @@ resources:
   - ./whoogle/ks.yaml
   # - ./autobrr/ks.yaml
   # - ./omegabrr/ks.yaml
-  - ./minecraft/ks.yaml
-  - ./rediary/ks.yaml
-  - ./ghostfolio/ks.yaml
-  - ./mealie/ks.yaml
-  - ./outline/ks.yaml
-  - ./windmill/ks.yaml
+  # - ./minecraft/ks.yaml
+  # - ./rediary/ks.yaml
+  # - ./ghostfolio/ks.yaml
+  # - ./mealie/ks.yaml
+  # - ./outline/ks.yaml
+  # - ./windmill/ks.yaml
