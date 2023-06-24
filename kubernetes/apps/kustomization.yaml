@@ -13,3 +13,4 @@ resources:
   - ./rook-ceph
   - ./volsync
   - ./security
+  - ./actions-runner
