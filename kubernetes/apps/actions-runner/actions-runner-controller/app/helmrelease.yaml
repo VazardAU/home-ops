@@ -67,7 +67,7 @@ spec:
       secret:
         enabled: true
         create: false
-        name: *secret
+        name: *app
     actionsMetrics:
       serviceMonitor: false
       port: 8080
