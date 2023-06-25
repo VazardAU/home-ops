@@ -4,8 +4,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: default
 resources:
+  - ./volume.yaml
   - ./backups
   - ./helmrelease.yaml
-  - ./volume.yaml
 patchesStrategicMerge:
   - ./patches/browser.yaml
