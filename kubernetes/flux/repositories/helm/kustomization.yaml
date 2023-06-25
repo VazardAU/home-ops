@@ -43,3 +43,4 @@ resources:
   - ./deliveryhero.yaml
   - ./fairwinds.yaml
   - ./windmill.yaml
+  - ./actions-runner-controller.yaml
