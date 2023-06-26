@@ -27,7 +27,6 @@ resources:
   - ./bazarr/ks.yaml
   - ./excalidraw/ks.yaml
   - ./n8n/ks.yaml
-  ## - ./obsidian-couchdb/ks.yaml
   - ./nextcloud/ks.yaml
   - ./navidrome/ks.yaml
   ## - ./external-ingress/ks.yaml
@@ -36,16 +35,11 @@ resources:
   - ./readarr/ks.yaml
   - ./calibre/ks.yaml
   - ./calibre-web/ks.yaml
-  ## - ./games-on-whales/ks.yaml
   - ./libreddit/ks.yaml
   - ./invidious/ks.yaml
   - ./nitter/ks.yaml
   - ./whoogle/ks.yaml
-  ## - ./autobrr/ks.yaml
-  ## - ./omegabrr/ks.yaml
-  # - ./minecraft/ks.yaml
   - ./rediary/ks.yaml
-  # - ./ghostfolio/ks.yaml
   - ./mealie/ks.yaml
   - ./outline/ks.yaml
   # - ./windmill/ks.yaml
