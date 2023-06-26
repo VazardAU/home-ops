@@ -48,6 +48,7 @@ spec:
         enabled: true
         annotations:
           hajimari.io/enable: "false"
+          external-dns.home.arpa/enabled: "true"
         ingressClassName: nginx
         hosts:
           - host: &host arc-webhook.${SECRET_CLUSTER_DOMAIN}
