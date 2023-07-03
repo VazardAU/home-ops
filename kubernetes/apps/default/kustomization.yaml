@@ -45,3 +45,4 @@ resources:
   # - ./windmill/ks.yaml
   # - ./xteve/ks.yaml
   - ./homepage/ks.yaml
+  - ./firefly-iii/ks.yaml
