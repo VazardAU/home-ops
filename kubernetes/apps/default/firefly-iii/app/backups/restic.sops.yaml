@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: firefly-iii-restic
+type: Opaque
+stringData:
+    RESTIC_REPOSITORY: ENC[AES256_GCM,data:1059808fMa6Ekk4u+vD9nvdLbAXWsAIBdcoZq/zJJewIGRq/jl+M12f+GC1NhYgyF/WbhhmOQ9hI,iv:riHMfAdrT5wYW5YJ1qiZ7JvAJbky8RLhPRdxyc3oYRU=,tag:GKm9ZnIwkmaV5Nc7kqHjTg==,type:str]
+    RESTIC_PASSWORD: ENC[AES256_GCM,data:rXDpQUTue2/7gl6Inm2A/Tueqv3t9ymi31Q0XgQv8eqEJjoDqJtrjkBzA5rlnUgO2XVFj/7S2AJfJwP2JTd/cA==,iv:AEs8aALzZdhQgPMK+AuEuzJXpen4EoqasQxsMCuDvQs=,tag:kVIX6VTniZcCQ7FPqk1/RA==,type:str]
+    AWS_ACCESS_KEY_ID: ENC[AES256_GCM,data:MDL+0HQO+w==,iv:JvvO4lPrBSKy5dwmkrv+FtCdUm0a4yE3Z659hzke/nM=,tag:WDkqj0hF4WIeoXI9BNiAlQ==,type:str]
+    AWS_SECRET_ACCESS_KEY: ENC[AES256_GCM,data:fa29rK15eOgqEzgb5ec3L6wOpQ==,iv:rFc0US0W8fdWa6qfVxZC9qs+pW0riWqLVWx93yRBVS0=,tag:8K5LqdFTwdwfliFHD4jCjA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age153gpfdw58csvgxj3vn9ym2g3zx7mfhaldyz5uvvrfajne8htj3asjqrp7h
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBPRkdjZER2WVF4Ti9MK0Z5
+            cGFrWldKZS83YmEvYklUQjdPSU13UGpYZDFrCkswM0Z3NnVUd3FXR0VWWU1wdzRP
+            MHBybnNGR2I1dy8xaGN5NGZnU1dSN0kKLS0tIHB2dFR3cWY0clhFSGYyTXZNbC85
+            YjhyK3pBVENLYmFyYW1ZVmtKRDJkVE0Kn+E2LQkNykMELzZ3GAhGWsAtycnePMw4
+            btd6doUU5uHV8fZdh/qVeMdmkDX1QadizcZpdkW19srLUxYaNwGf2A==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-07-03T05:37:49Z"
+    mac: ENC[AES256_GCM,data:Zje/C8bzFEaMd/UhL5TtZdv+7WGn+dCeRsH3rfhEr1pykpeDxHm25Qh9Dm4z2R73rEK7XA5lJ3rKu12Kq97O5xv3ZrCyu1S1M8hVktz5vV0NfebtIy/IRLFwS74CA+aN7WbfMzcK/oJkYegg01mehiQhRstEXhkbHbqZvPliuI8=,iv:XBiyUrj6vC4mP1wPPm9pUwwyKd5CkbnRquXOFQ1XQ9c=,tag:/mpIb60GnqdEcExfI7bLLA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
