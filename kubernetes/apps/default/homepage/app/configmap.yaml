@@ -19,7 +19,7 @@ data:
         target: _blank
     - greeting:
         text_size: xl
-        text: "Where do you want to go?"
+        text: "Strallow Cloud"
     - kubernetes:
         cluster:
           show: true
