@@ -41,7 +41,7 @@ spec:
         gethomepage.dev/name: "Authentik"
         gethomepage.dev/group: "Security"
         gethomepage.dev/icon: "authentik"
-        gethomepage.dev/description: "Open-source Identity Provider focused on flexibility and versatility."
+        gethomepage.dev/description: "Identity Provider"
       hosts:
         - host: &host "auth.${SECRET_CLUSTER_DOMAIN}"
           paths:
