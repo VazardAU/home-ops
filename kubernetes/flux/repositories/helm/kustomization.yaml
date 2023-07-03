@@ -45,3 +45,4 @@ resources:
   - ./windmill.yaml
   - ./actions-runner-controller.yaml
   - ./authentik.yaml
+  - ./jameswynn.yaml

@@ -44,3 +44,4 @@ resources:
   - ./outline/ks.yaml
   # - ./windmill/ks.yaml
   # - ./xteve/ks.yaml
+  - ./homepage/ks.yaml
