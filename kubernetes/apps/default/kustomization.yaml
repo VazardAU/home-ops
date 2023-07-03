@@ -43,4 +43,4 @@ resources:
   - ./mealie/ks.yaml
   - ./outline/ks.yaml
   # - ./windmill/ks.yaml
-  - ./xteve/ks.yaml
+  # - ./xteve/ks.yaml
