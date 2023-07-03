@@ -44,3 +44,4 @@ resources:
   - ./fairwinds.yaml
   - ./windmill.yaml
   - ./actions-runner-controller.yaml
+  - ./authentik.yaml
