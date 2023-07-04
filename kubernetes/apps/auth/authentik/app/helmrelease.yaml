@@ -17,10 +17,12 @@ spec:
   maxHistory: 3
   install:
     createNamespace: true
+    crds: CreateReplace
     remediation:
       retries: 3
   upgrade:
     cleanupOnFail: true
+    crds: CreateReplace
     remediation:
       retries: 3
   uninstall:
@@ -35,7 +37,7 @@ spec:
           name: *app
     ingress:
       enabled: true
-      ingressClassName: nginx
+      ingressClassName: "nginx"
       annotations:
         gethomepage.dev/enabled: "true"
         gethomepage.dev/name: "Authentik"
