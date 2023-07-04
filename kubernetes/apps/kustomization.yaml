@@ -12,5 +12,5 @@ resources:
   - ./networking
   - ./rook-ceph
   - ./volsync
-  # - ./auth
+  - ./auth-system
   - ./actions-runner
