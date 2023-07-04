@@ -60,7 +60,7 @@ spec:
           gethomepage.dev/name: "Sonarr"
           gethomepage.dev/group: "The High Seas"
           gethomepage.dev/icon: "sonarr"
-          gethomepage.dev/description: "TV Show Downloading"
+          gethomepage.dev/description: "TV Show Management"
         hosts:
           - host: *host
             paths:
