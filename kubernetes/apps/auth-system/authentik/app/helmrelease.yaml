@@ -25,6 +25,9 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    outposts:
+      docker_image_base: ghcr.io/goauthentik/%(type)s
+    fullnameOverride: authentik
     image:
       repository: ghcr.io/goauthentik/server
       tag: 2023.5.4

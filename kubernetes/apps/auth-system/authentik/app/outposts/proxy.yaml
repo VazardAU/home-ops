@@ -1,0 +1,25 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: authentik-proxy-outpost
+  namespace: auth-system
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: "${CLUSTER_LB_AUTHENTIK_PROXY}"
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+  ports:
+    - name: http
+      port: 9000
+      protocol: TCP
+      targetPort: http
+    - name: https
+      port: 9443
+      protocol: TCP
+      targetPort: https
+  selector:
+    app.kubernetes.io/managed-by: goauthentik.io
+    app.kubernetes.io/name: authentik-proxy-outpost
+    goauthentik.io/outpost-name: proxy-outpost
+    goauthentik.io/outpost-type: proxy

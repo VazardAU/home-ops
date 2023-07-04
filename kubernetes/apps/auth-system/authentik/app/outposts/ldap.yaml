@@ -1,0 +1,25 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: authentik-ldap-outpost
+  namespace: auth-system
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: "${CLUSTER_LB_AUTHENTIK_LDAP}"
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+  ports:
+    - name: ldap
+      protocol: TCP
+      port: 389
+      targetPort: 3389
+    - name: ldaps
+      protocol: TCP
+      port: 636
+      targetPort: 6636
+  selector:
+    app.kubernetes.io/managed-by: goauthentik.io
+    app.kubernetes.io/name: authentik-ldap-outpost
+    goauthentik.io/outpost-name: ldap-outpost
+    goauthentik.io/outpost-type: ldap
