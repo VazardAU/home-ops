@@ -56,7 +56,11 @@ spec:
             proxy_set_header Accept-Encoding "";
             sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.${SECRET_CLUSTER_DOMAIN}/css/base/sonarr/nord.css"></head>';
             sub_filter_once on;
-          hajimari.io/icon: mdi:television-classic
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: "Sonarr"
+          gethomepage.dev/group: "The High Seas"
+          gethomepage.dev/icon: "sonarr"
+          gethomepage.dev/description: "TV Show Downloading"
         hosts:
           - host: *host
             paths:
