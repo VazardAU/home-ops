@@ -23,6 +23,7 @@
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prIgnoreNotification"],
   "rebaseWhen": "conflicted",
+  "schedule": ["on monday"],
   "commitBodyTable": true,
   "commitMessagePrefix": "⬆️",
   "ignorePaths": [],
