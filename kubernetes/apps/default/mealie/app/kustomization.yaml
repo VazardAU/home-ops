@@ -7,5 +7,5 @@ resources:
   - ./volume.yaml
   - ./externalsecret.yaml
   - ./helmrelease.yaml
-patches:
+patchesStrategicMerge:
   - ./patches/postgres.yaml

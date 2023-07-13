@@ -6,7 +6,7 @@ namespace: monitoring
 resources:
   - ./secret.sops.yaml
   - ./helmrelease.yaml
-patches:
+patchesStrategicMerge:
   - ./patches/geoip.yaml
 configMapGenerator:
   - name: vector-aggregator-configmap

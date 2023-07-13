@@ -7,5 +7,5 @@ resources:
   - ./volume.yaml
   - ./backups
   - ./helmrelease.yaml
-patches:
+patchesStrategicMerge:
   - ./patches/browser.yaml

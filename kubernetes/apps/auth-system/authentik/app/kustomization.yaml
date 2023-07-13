@@ -6,5 +6,5 @@ namespace: auth-system
 resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
-patches:
+patchesStrategicMerge:
   - ./patches/postgres.yaml

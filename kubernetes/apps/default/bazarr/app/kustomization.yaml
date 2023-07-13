@@ -8,5 +8,5 @@ resources:
   - ./helmrelease.yaml
   - ./secret.sops.yaml
   - ./volume.yaml
-patches:
+patchesStrategicMerge:
   - ./patches/subcleaner.yaml

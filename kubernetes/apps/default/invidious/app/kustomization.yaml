@@ -6,7 +6,7 @@ namespace: default
 resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
-patches:
+patchesStrategicMerge:
   - ./patches/postgres.yaml
 configMapGenerator:
   - name: invidious-server
