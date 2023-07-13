@@ -18,7 +18,7 @@ spec:
   monitoring:
     enablePodMonitor: true
   backup:
-    retentionPolicy: 30d
+    retentionPolicy: 14d
     barmanObjectStore:
       wal:
         compression: bzip2
@@ -28,9 +28,9 @@ spec:
       serverName: postgres-v1
       s3Credentials:
         accessKeyId:
-          name: postgres-minio
-          key: MINIO_ACCESS_KEY
+          name: cloudnative-pg
+          key: aws-access-key-id
         secretAccessKey:
-          name: postgres-minio
-          key: MINIO_SECRET_KEY
+          name: cloudnative-pg
+          key: aws-secret-access-key
 
