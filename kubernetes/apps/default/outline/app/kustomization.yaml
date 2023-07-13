@@ -6,6 +6,6 @@ namespace: default
 resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
-patchesStrategicMerge:
+patches:
   - ./patches/env.yaml
   - ./patches/postgres.yaml
