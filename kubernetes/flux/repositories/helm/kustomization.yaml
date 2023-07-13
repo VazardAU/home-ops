@@ -46,3 +46,4 @@ resources:
   - ./actions-runner-controller.yaml
   - ./authentik.yaml
   - ./jameswynn.yaml
+  - ./weaveworks.yaml
