@@ -8,7 +8,7 @@ metadata:
 spec:
   interval: 30m
   # https://github.com/k8s-at-home/template-cluster-k3s/issues/324
-  url: ssh://git@github.com/VazardAU/home-ops
+  url: https://git@github.com/VazardAU/home-ops
   ref:
     branch: main
   secretRef:
