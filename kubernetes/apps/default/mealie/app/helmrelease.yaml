@@ -74,7 +74,7 @@ spec:
           hajimari.io/enable: "true"
           hajimari.io/icon: chef-hat
         hosts:
-          - host: &host nuggets.${SECRET_CLUSTER_DOMAIN}
+          - host: &host mealie.${SECRET_CLUSTER_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
