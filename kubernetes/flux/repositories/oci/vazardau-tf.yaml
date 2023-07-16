@@ -2,10 +2,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
-  name: vazardau
+  name: vazardau-tf
   namespace: flux-system
 spec:
   interval: 1h
   type: oci
-  url: oci://ghcr.io/vazardau
+  url: oci://ghcr.io/vazardau/terraform
   timeout: 3m
