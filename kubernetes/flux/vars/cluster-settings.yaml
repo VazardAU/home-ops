@@ -23,6 +23,7 @@ data:
   LOCAL_LAN: 192.168.10.0/24
   LOCAL_LAN_OPNSENSE: 192.168.10.1
   LOCAL_LAN_TRUENAS: 192.168.10.10
+  LOCAL_LAN_HASS: 192.168.1.107
   TIMEZONE: "Australia/Melbourne"
   POSTGRES_HOST: "postgres-rw.default.svc.cluster.local."
   POSTGRES_PORT: "5432"

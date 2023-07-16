@@ -32,4 +32,4 @@ spec:
   - name: minio
     port: 9000
   type: ExternalName
-  externalName: minio
+  externalName: ${LOCAL_LAN_TRUENAS}

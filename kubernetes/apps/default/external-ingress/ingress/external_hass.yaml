@@ -17,7 +17,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: external-truenas
+            name: external-hass
             port:
               number: 443
   tls:
@@ -34,4 +34,4 @@ spec:
   - name: https
     port: 443
   type: ExternalName
-  externalName: hass
+  externalName: ${LOCAL_LAN_HASS}
