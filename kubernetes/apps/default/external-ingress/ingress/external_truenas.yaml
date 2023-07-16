@@ -5,9 +5,7 @@ metadata:
   name: external-truenas
   namespace: default
   annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    nginx.ingress.kubernetes.io/auth-url: "https://oauth.${SECRET_CLUSTER_DOMAIN}/oauth2/auth"
-    nginx.ingress.kubernetes.io/auth-signin: https://oauth.${SECRET_CLUSTER_DOMAIN}/oauth2/start
+    hajimari.io/enable: "true"
 spec:
   rules:
   - host: &app nas.${SECRET_CLUSTER_DOMAIN}
