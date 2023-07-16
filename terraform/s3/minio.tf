@@ -6,7 +6,7 @@ locals {
 }
 
 module "onepassword_item_minio" {
-  source = "github.com/VazardAU/home-ops/terraform/1password"
+  source = "./modules/minio_1password"
   vault  = "sc_secrets"
   item   = "minio"
 }

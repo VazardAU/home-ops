@@ -1,0 +1,32 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: terraform-s3-oci
+spec:
+  interval: 1m
+  url: oci://ghcr.io/vazardau/terraform/s3
+  ref:
+    tag: main
+---
+apiVersion: infra.contrib.fluxcd.io/v1alpha2
+kind: Terraform
+metadata:
+  name: terraform-s3
+spec:
+  path: ./
+  approvePlan: auto
+  interval: 1m
+  sourceRef:
+    kind: OCIRepository
+    name: terraform-s3-oci
+  runnerPodTemplate:
+    spec:
+      env:
+        - name: OP_CONNECT_HOST
+          value: http://onepassword-connect:8080
+        - name: OP_CONNECT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: tf-controller-secrets
+              key: OP_CONNECT_TOKEN
