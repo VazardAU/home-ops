@@ -34,4 +34,4 @@ spec:
   - name: https
     port: 443
   type: ExternalName
-  externalName: ${LOCAL_LAN_HASS}
+  externalName: 192.168.1.107
