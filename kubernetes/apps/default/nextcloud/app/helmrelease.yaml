@@ -73,6 +73,12 @@ spec:
       enabled: true
       type: postgresql
       host: postgres-rw.default.svc.cluster.local.
+      database: nextcloud
+      existingSecret:
+        enabled: true
+        secretName: *app
+        usernameKey: POSTGRES_USER
+        passwordKey: POSTGRES_PASS
     ingress:
       enabled: true
       className: nginx
@@ -125,16 +131,3 @@ spec:
       timeoutSeconds: 5
       failureThreshold: 30
       successThreshold: 1
-  valuesFrom:
-    - targetPath: externalDatabase.user
-      kind: Secret
-      name: *app
-      valuesKey: POSTGRES_USER
-    - targetPath: externalDatabase.password
-      kind: Secret
-      name: *app
-      valuesKey: POSTGRES_PASS
-    - targetPath: externalDatabase.database
-      kind: Secret
-      name: *app
-      valuesKey: POSTGRES_DB
