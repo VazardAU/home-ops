@@ -9,7 +9,7 @@ resources:
   # Default resources
   - jobs-rbac.yaml
   - ./hajimari/ks.yaml
-  - ./cloudnative-pg/ks.yaml
+  # - ./cloudnative-pg/ks.yaml
   - ./redis/ks.yaml
   - ./glauth/ks.yaml
   - ./smtp-relay/ks.yaml
