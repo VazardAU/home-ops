@@ -35,7 +35,7 @@ spec:
       className: nginx
       annotations:
         hajimari.io/icon: mdi:sawtooth-wave
-        auth.home.arpa/enabled: "true"
+        # auth.home.arpa/enabled: "true"
       hosts:
         - host: &host "gitops.${SECRET_CLUSTER_DOMAIN}"
           paths:
