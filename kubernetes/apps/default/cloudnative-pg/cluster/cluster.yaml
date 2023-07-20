@@ -16,6 +16,13 @@ spec:
     storageClass: rook-ceph-block
   superuserSecret:
     name: cloudnative-pg
+  resources:
+    requests:
+      cpu: 100m
+      memory: 1Gi
+    limits:
+      cpu: 500m
+      memory: 2Gi
   monitoring:
     enablePodMonitor: true
   backup:
