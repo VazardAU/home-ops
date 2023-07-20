@@ -6,12 +6,12 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
-  - ./kube-prometheus-stack/ks.yaml
-  - ./thanos/ks.yaml
-  - ./grafana/ks.yaml
+  # - ./kube-prometheus-stack/ks.yaml
+  # - ./thanos/ks.yaml
+  # - ./grafana/ks.yaml
   # - ./loki/ks.yaml
-  - ./smartctl-exporter/ks.yaml
+  # - ./smartctl-exporter/ks.yaml
   # - ./vector/ks.yaml
   # - ./goldilocks/ks.yaml
-  - ./node-problem-detector/ks.yaml
+  # - ./node-problem-detector/ks.yaml
   # - ./uptime-kuma/ks.yaml
