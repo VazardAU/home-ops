@@ -33,7 +33,7 @@ spec:
         maxParallel: 8
       destinationPath: s3://postgresql/
       endpointURL: https://s3.${SECRET_DOMAIN}:9000
-      serverName: postgres-v1
+      serverName: postgres-v2
       s3Credentials:
         accessKeyId:
           name: cloudnative-pg
@@ -41,4 +41,19 @@ spec:
         secretAccessKey:
           name: cloudnative-pg
           key: aws-secret-access-key
-
+  externalClusters:
+    - name: postgres-backup
+      barmanObjectStore:
+        wal:
+          compression: bzip2
+          maxParallel: 8
+        destinationPath: s3://postgresql/
+        endpointURL: https://s3.${SECRET_DOMAIN}:9000
+        serverName: "postgres-v1"
+        s3Credentials:
+          accessKeyId:
+            name: cloudnative-pg
+            key: aws-access-key-id
+          secretAccessKey:
+            name: cloudnative-pg
+            key: aws-secret-access-key
