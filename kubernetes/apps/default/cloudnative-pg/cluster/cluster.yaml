@@ -57,6 +57,4 @@ spec:
           secretAccessKey:
             name: cloudnative-pg
             key: aws-secret-access-key
-  bootstrap:
-    recovery:
-      source: postgres-backup
+
