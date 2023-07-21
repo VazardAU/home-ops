@@ -30,9 +30,10 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-          - key: node-role.kubernetes.io/control-plane
-            operator: NotIn
-            values: []
+          - key: worker-node
+            operator: In
+            values:
+            - "true"
         topologyKey: "kubernetes.io/hostname"
   backup:
     retentionPolicy: 14d
