@@ -25,14 +25,15 @@ spec:
       memory: 2Gi
   monitoring:
     enablePodMonitor: true
-  additionalPodAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-    - labelSelector:
-        matchExpressions:
-        - key: app
-          operator: Exists
-          values: "rook-ceph-osd"
-      topologyKey: "kubernetes.io/hostname"
+  affinity:
+    additionalPodAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: Exists
+            values: "rook-ceph-osd"
+        topologyKey: "kubernetes.io/hostname"
   backup:
     retentionPolicy: 14d
     barmanObjectStore:
