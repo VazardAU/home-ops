@@ -31,9 +31,8 @@ spec:
       - labelSelector:
           matchExpressions:
           - key: worker-node
-            operator: In
-            values:
-            - "true"
+            operator: Exists
+            values: []
         topologyKey: "kubernetes.io/hostname"
   backup:
     retentionPolicy: 14d
