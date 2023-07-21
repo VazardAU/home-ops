@@ -31,8 +31,9 @@ spec:
       - labelSelector:
           matchExpressions:
           - key: app
-            operator: Exists
-            values: "rook-ceph-osd"
+            operator: In
+            values:
+            - rook-ceph-osd
         topologyKey: "kubernetes.io/hostname"
   backup:
     retentionPolicy: 14d
