@@ -8,7 +8,7 @@ metadata:
     kyverno.io/ignore: "true"
     secret.reloader.stakater.com/reload: cloudnative-pg
 spec:
-  instances: 3
+  instances: 1
   imageName: ghcr.io/cloudnative-pg/postgresql:15.2-11
   primaryUpdateStrategy: unsupervised
   storage:
@@ -25,15 +25,6 @@ spec:
       memory: 2Gi
   monitoring:
     enablePodMonitor: true
-  affinity:
-    additionalPodAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-      - labelSelector:
-          matchExpressions:
-          - key: worker-node
-            operator: Exists
-            values: []
-        topologyKey: "kubernetes.io/hostname"
   backup:
     retentionPolicy: 14d
     barmanObjectStore:
