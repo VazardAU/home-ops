@@ -14,5 +14,5 @@ resources:
   # - ./oauth2-proxy/ks.yaml
   - ./unifi/ks.yaml
   - ./opnsense/ks.yaml
-  - ./omada/ks.yaml
+  # - ./omada/ks.yaml
   # - ./multus/ks.yaml
