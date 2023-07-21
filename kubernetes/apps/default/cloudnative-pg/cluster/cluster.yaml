@@ -30,10 +30,9 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-          - key: app
-            operator: In
-            values:
-            - rook-ceph-osd
+          - key: node-role.kubernetes.io/control-plane
+            operator: NotIn
+            values: []
         topologyKey: "kubernetes.io/hostname"
   backup:
     retentionPolicy: 14d
