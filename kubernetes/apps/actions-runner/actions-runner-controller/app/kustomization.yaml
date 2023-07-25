@@ -5,7 +5,6 @@ kind: Kustomization
 namespace: actions-runner
 resources:
   - ./externalsecret.yaml
-  - ./volume.yaml
   - ./helmrelease.yaml
 
 
