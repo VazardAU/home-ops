@@ -46,3 +46,4 @@ resources:
   # - ./xteve/ks.yaml
   - ./homepage/ks.yaml
   # - ./firefly-iii/ks.yaml
+  - ./kubernetes-schemas/ks.yaml
