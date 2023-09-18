@@ -31,7 +31,7 @@ spec:
       nameOverride: *app
     image:
       repository: rook/ceph
-      tag: v1.12.3@sha256:5892b123970872387db844edb290f7a6d5653956f7e5af62717db4d17e0b3069
+      tag: v1.12.4@sha256:393cd41a38eae351f70f72d1397323e58b2fecaab0f8c2d469ce805e5276b418
     command: ["/usr/local/bin/toolbox.sh"]
     env:
       ROOK_CEPH_USERNAME:
