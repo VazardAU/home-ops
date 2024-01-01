@@ -33,7 +33,7 @@ spec:
       secret.reloader.stakater.com/reload: *app
     image:
       repository: quay.io/oauth2-proxy/oauth2-proxy
-      tag: v7.4.0
+      tag: v7.5.1
     extraArgs:
       provider: google
       skip-provider-button:
