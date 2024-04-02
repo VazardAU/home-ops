@@ -23,7 +23,7 @@ spec:
           restartPolicy: Never
           containers:
             - name: *name
-              image: nextcloud:27.1.8-fpm-alpine
+              image: nextcloud:28.0.4-fpm-alpine
               imagePullPolicy: IfNotPresent
               command:
                 - curl
