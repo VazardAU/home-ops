@@ -15,7 +15,7 @@
       runs-on: ["arc-runner-set-home-ops"]
       steps:
         - name: Setup Flux
-          uses: fluxcd/flux2/action@9b3162495ce1b99b1fcdf137c553f543eafe3ec7 # v2.0.1
+          uses: fluxcd/flux2/action@54e4ba378e155ada619caafdc599e5c4d759ce5c # v2.8.7
 
         - name: Setup Kube Tools
           uses: yokawasa/action-setup-kube-tools@9d39563c24d4a419d1a8289c34d6da5a6171252c # v0.13.5
@@ -79,7 +79,7 @@
       needs: ["publish-manifests"]
       steps:
         - name: Setup Flux
-          uses: fluxcd/flux2/action@9b3162495ce1b99b1fcdf137c553f543eafe3ec7 # v2.0.1
+          uses: fluxcd/flux2/action@54e4ba378e155ada619caafdc599e5c4d759ce5c # v2.8.7
 
         - name: Setup QEMU
           uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2.2.0
